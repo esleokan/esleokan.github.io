@@ -3,11 +3,10 @@ layout: default
 title: Gallery
 permalink: /gallery/
 ---
-
 <div class="grid">
   {% assign reversed_gallery = site.data.gallery | reverse %}
   {% for item in reversed_gallery %}
-    <div class="grid-item fade-in">
+    <div class="grid-item fade-in" tabindex="0">
       {% if item.work_link %}
         <a href="{{ item.work_link }}" target="_blank">
           <img src="{{ item.image }}" alt="{{ item.title }}" />
