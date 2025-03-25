@@ -162,6 +162,24 @@ header h1 {
   opacity: 1;
 }
 
+@media (max-width: 600px) {
+  .grid-item:focus .overlay,
+  .grid-item:active .overlay {
+    opacity: 1;
+  }
+
+  /* 添加可點擊樣式 */
+  .grid-item {
+    cursor: pointer;
+  }
+
+  /* 確保圖片可以被點擊 */
+  .grid-item img {
+    pointer-events: none;
+  }
+}
+
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -197,6 +215,13 @@ header h1 {
 
   .grid {
     column-count: 1;
+  }
+}
+
+/* 添加新的媒體查詢 */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .grid {
+    column-count: 2;
   }
 }
 
