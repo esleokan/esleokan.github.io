@@ -1,0 +1,13 @@
+<header>
+  <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="tabs" id="tabMenu">
+    <a href="{{ '/' | relative_url }}" class="tab-link {% if page.url == '/' %}active{% endif %}">Loyn</a>
+    <a href="{{ '/gallery' | relative_url }}" class="tab-link {% if page.url == '/gallery/' %}active{% endif %}">Gallery</a>
+    <a href="{{ '/fursuit' | relative_url }}" class="tab-link {% if page.url == '/fursuit/' %}active{% endif %}">Fursuit</a>
+  </div>
+</header>

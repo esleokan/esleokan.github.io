@@ -1,0 +1,28 @@
+title: Loyn's Lair
+description: Loyn 的小窩
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Custom settings
+collections:
+  gallery:
+    output: true
+  fursuit:
+    output: true
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - script
