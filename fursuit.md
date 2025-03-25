@@ -3,10 +3,9 @@ layout: default
 title: Fursuit
 permalink: /fursuit/
 ---
-
 <div class="fursuit-grid">
   {% for item in site.data.fursuit %}
-    <div class="grid-item fade-in">
+    <div class="grid-item fade-in" tabindex="0">
       <img src="{{ site.baseurl }}{{ item.image }}" alt="{{ item.title | default:'Loyn Fursuit' }}">
       <div class="overlay">
         {% if item.title %}

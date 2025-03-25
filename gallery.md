@@ -3,6 +3,15 @@ layout: default
 title: Gallery
 permalink: /gallery/
 ---
+
+<div class="content">
+  <h2 >Note</h2>
+<p>
+    <strong>I’m not the artist of the works in this gallery </strong>. They are all commissioned or gifted by talented creators. This gallery is just a personal archive to keep everything in one place. All artworks are credited to their original artists, including personal commissions and works from Skeb.
+  </p>
+</div>
+
+
 <div class="grid">
   {% assign reversed_gallery = site.data.gallery | reverse %}
   {% for item in reversed_gallery %}

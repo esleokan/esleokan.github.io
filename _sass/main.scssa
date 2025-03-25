@@ -1,29 +1,8 @@
 body {
-  font-family: 'Red Hat Text', 'Muli', sans-serif;
+  font-family: 'Red Hat Text', sans-serif;
   background-color: #eee;
   margin: 0;
   padding: 0;
-}
-
-/* 添加 Muli 字體和段落樣式 */
-p, ul, ol {
-  margin-top: 15px;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: 0em;
-}
-
-@media only screen and (min-width: 768px) {
-  p, ul, ol {
-    font-size: 17px;
-  }
-}
-
-@media only screen and (min-width: 1220px) {
-  p, ul, ol {
-    font-size: 19px;
-  }
 }
 
 header {
@@ -179,19 +158,6 @@ header h1 {
   text-decoration: underline;
 }
 
-/* 僅在大於 600px 的螢幕上啟用 hover 效果 */
-@media (min-width: 601px) {
-  .grid-item:hover .overlay,
-  .fursuit-grid .grid-item:hover .overlay {
-    opacity: 1;
-  }
-  .fursuit-grid .grid-item:hover .overlay {
-    opacity: 1;
-  }
-  
-}
-
-/* 桌面端懸停效果 */
 .grid-item:hover .overlay {
   opacity: 1;
 }
@@ -200,15 +166,6 @@ header h1 {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-@media (min-width: 601px) {
-  .grid-item:hover .overlay,
-  .fursuit-grid .grid-item:hover .overlay {
-    opacity: 1;
-  }
-  
-}
-
 
 @media (max-width: 600px) {
   header {
@@ -240,40 +197,6 @@ header h1 {
 
   .grid {
     column-count: 1;
-  }
-
-  /* 手機模式下的 overlay 處理 */
-  .grid-item {
-    cursor: pointer;
-  }
-
-  .grid-item img {
-    pointer-events: none;
-  }
-
-  /* 移除所有預設的 hover 效果 */
-  .grid-item:hover .overlay,
-  .fursuit-grid .grid-item:hover .overlay {
-    opacity: 0; 
-  }
-
-  .grid-item .overlay,
-  .fursuit-grid .grid-item .overlay {
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .grid-item.overlay-active .overlay,
-  .fursuit-grid .grid-item.overlay-active .overlay {
-    opacity: 1;
-  }
-
-}
-
-/* 添加新的媒體查詢 */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .grid {
-    column-count: 2;
   }
 }
 
@@ -337,7 +260,6 @@ header h1 {
   opacity: 0.9;
 }
 
-/* 桌面端懸停效果 */
 .fursuit-grid .grid-item:hover .overlay {
   opacity: 1;
 }
@@ -347,42 +269,4 @@ header h1 {
   .fursuit-grid {
     column-count: 1;  /* 一欄 */
   }
-
-  .fursuit-grid .grid-item {
-    cursor: pointer;
-  }
-
-  .fursuit-grid .grid-item img {
-    pointer-events: none;
-  }
-
-  .fursuit-grid .grid-item .overlay {
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .fursuit-grid .grid-item.overlay-active .overlay {
-    opacity: 1;
-  }
-}
-
-.text-center {
-  text-align: center;
-}
-
-.telegram-link {
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-    border-bottom: 1px dotted #666;
-}
-
-.telegram-link:hover {
-    color: #007bff;
-    border-bottom-color: #007bff;
-}
-
-.social-icon-spacing {
-  margin-left: 20px;
-  margin-right: 20px;
 }
