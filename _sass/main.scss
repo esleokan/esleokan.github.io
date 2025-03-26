@@ -5,6 +5,17 @@ body {
   padding: 0;
 }
 
+/* 全局添加box-sizing確保元素寬度計算正確 */
+* {
+  box-sizing: border-box;
+}
+
+/* 確保所有內容容器都有正確的最大寬度設置 */
+.content, .grid, .fursuit-grid, header, .tabs {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* 添加 Muli 字體和段落樣式 */
 p, ul, ol {
   margin-top: 15px;
@@ -82,7 +93,8 @@ header h1 {
   padding: 10px 18px;
   border: none;
   border-radius: 999px;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
@@ -209,13 +221,14 @@ header h1 {
   
 }
 
-
 @media (max-width: 600px) {
   header {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
     padding: 40px 20px 20px 20px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .menu-toggle {
@@ -227,6 +240,7 @@ header h1 {
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
+    box-sizing: border-box;
   }
 
   .tabs.show {
@@ -236,10 +250,24 @@ header h1 {
   .tabs .tab-link {
     width: 100%;
     text-align: left;
+    box-sizing: border-box;
+    border-radius: 5px; /* 改為較小的圓角 */
   }
 
-  .grid {
+  /* 確保內容區不會溢出 */
+  .content {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* 修正網格容器寬度 */
+  .grid, .fursuit-grid {
     column-count: 1;
+    padding: 0 20px 20px 20px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* 手機模式下的 overlay 處理 */
@@ -267,7 +295,6 @@ header h1 {
   .fursuit-grid .grid-item.overlay-active .overlay {
     opacity: 1;
   }
-
 }
 
 /* 添加新的媒體查詢 */
@@ -383,6 +410,7 @@ header h1 {
 }
 
 .social-icon-spacing {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  vertical-align: top;
 }

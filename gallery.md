@@ -3,18 +3,25 @@ layout: default
 title: Gallery
 permalink: /gallery/
 ---
+<div style="display:none">
+  {% for item in site.data.gallery %}
+    {{ item.title }}, 
+  {% endfor %}
+</div>
 
 <div class="content">
   <h2 >Note</h2>
 <p>
-    <strong>I’m not the artist of the works in this gallery </strong>. They are all commissioned or gifted by talented creators. This gallery is just a personal archive to keep everything in one place. All artworks are credited to their original artists, including personal commissions and works from Skeb.
-  </p>
+<strong> I’m not the artist of the works in this gallery. </strong> This is a personal archive to keep everything in one place. All artworks were either commissioned or generously gifted by the artists, including personal commissions and works from Skeb. 
+</p>
+<p>
+I really appreciate their creativity and effort.
+    </p>
 </div>
 
 
 <div class="grid">
-  {% assign reversed_gallery = site.data.gallery | reverse %}
-  {% for item in reversed_gallery %}
+  {% for item in site.data.gallery %}
     <div class="grid-item fade-in" tabindex="0">
       {% if item.work_link %}
         <a href="{{ item.work_link }}" target="_blank">
