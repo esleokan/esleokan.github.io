@@ -11,5 +11,10 @@
   {% if page.url contains 'yml-editor' %}
   <link rel="stylesheet" href="{{ '/assets/css/yml-editor.css' | relative_url }}">
   {% endif %}
+
+  <!-- 在你的 Jekyll 網站 _includes/head.html 文件中添加 -->
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/ogimage.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   
 </head>
