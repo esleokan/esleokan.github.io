@@ -35,7 +35,7 @@ To keep up with Loyn’s latest adventures, check out X or public posts on Faceb
  
  **Social links:** &nbsp; 
 [![X](/assets/images/social/x.png){:width="50px" .social-icon-spacing}](https://x.com/loynuwu)
-[![Facebook](/assets/images/social/fb.png){:width="50px" .social-icon-spacing}](https://www.facebook.com/your_facebook_page)
+[![Facebook](/assets/images/social/fb.png){:width="50px" .social-icon-spacing}](https://www.facebook.com/loynuwu)
 [![Plurk](/assets/images/social/plurk.webp){:width="50px" .social-icon-spacing}](https://www.plurk.com/Leo_os)
 [![Strava](/assets/images/social/strava.png){:width="50px" .social-icon-spacing}](https://www.strava.com/athletes/leokan)
 [![Linktree](/assets/images/social/linktree.svg){:width="40px" .social-icon-spacing}](https://linktr.ee/loyn)

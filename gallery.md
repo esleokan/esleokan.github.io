@@ -3,11 +3,6 @@ layout: default
 title: Gallery
 permalink: /gallery/
 ---
-<div style="display:none">
-  {% for item in site.data.gallery %}
-    {{ item.title }}, 
-  {% endfor %}
-</div>
 
 <div class="content">
   <h2 >Note</h2>
@@ -18,7 +13,6 @@ permalink: /gallery/
 I really appreciate their creativity and effort.
     </p>
 </div>
-
 
 <div class="grid">
   {% for item in site.data.gallery %}
