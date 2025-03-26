@@ -93,8 +93,8 @@ header h1 {
   padding: 10px 18px;
   border: none;
   border-radius: 999px;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
@@ -249,9 +249,12 @@ header h1 {
 
   .tabs .tab-link {
     width: 100%;
-    text-align: left;
+    text-align: right;
+    padding-right: 20px;
     box-sizing: border-box;
     border-radius: 5px; /* 改為較小的圓角 */
+    display: flex;
+    justify-content: space-between;
   }
 
   /* 確保內容區不會溢出 */
@@ -391,6 +394,12 @@ header h1 {
   .fursuit-grid .grid-item.overlay-active .overlay {
     opacity: 1;
   }
+  
+  /* 手機模式下的頁腳調整 */
+  footer {
+    padding: 20px;
+    font-size: 12px;
+  }
 }
 
 .text-center {
@@ -413,4 +422,25 @@ header h1 {
   margin-left: 10px;
   margin-right: 10px;
   vertical-align: top;
+}
+
+/* 頁腳樣式 */
+footer {
+  text-align: center;
+  padding: 20px 40px;
+  background-color: #eee;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #777;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer .copyright {
+  font-weight: 400;
+}
+
+footer .highlight {
+  font-weight: bold;
 }
