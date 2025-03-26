@@ -1,7 +1,7 @@
 title: Loyn's Lair
 description: Loyn 的小窩
 baseurl: ""
-url: ""
+url: "https://loyn.me"
 
 # Build settings
 markdown: kramdown
