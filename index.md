@@ -3,7 +3,7 @@ layout: page
 title: About Loyn
 permalink: /
 ---
-Welcome to Loyn, the cheerful little furred dragon's lair! I’m happy you’re here.
+Welcome to Loyn’s lair, home of the happy little furred dragon. So glad you are here!
 
 This secret corner is where you’ll find Loyn’s commissioned art and some fun snapshots from past events. Huge thanks to the artists and friends who helped bring Loyn to life and capture all these moments!
 
