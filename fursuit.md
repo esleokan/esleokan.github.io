@@ -20,3 +20,5 @@ permalink: /fursuit/
     </div>
   {% endfor %}
 </div>
+
+<script src="/assets/js/gallery.js"></script>
