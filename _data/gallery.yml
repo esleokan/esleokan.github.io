@@ -1,29 +1,34 @@
+- author: 妞龍
+  author_link: https://www.facebook.com/puii.liu
+  image: /assets/images/gallery/puli.webp
+  title: 妞龍飯友
+- author: Racoonwolf
+  author_link: https://www.plurk.com/racoonwolf
+  image: /assets/images/gallery/CFYCH_loyn.webp
+  title: 合格獸控YCH
 - author: 德羅布
   author_link: https://www.facebook.com/profile.php?id=100044197431908
   date_added: '2025-03-25'
   image: /assets/images/gallery/derob.webp
   title: Loyn à Lyon！
-
 - author: Slowworks
   author_link: https://www.plurk.com/slowwork
   date_added: '2025-03-25'
   image: /assets/images/gallery/2025-3-4_Loyn_2.webp
   title: 抹茶蛋糕！！
-
 - author: Till
   author_link: https://x.com/sd_till3219
   date_added: '2025-03-25'
   image: /assets/images/gallery/loyn_comm_95.webp
   title: SD風格
   work_link: https://skeb.jp/@sd_till3219/works/1
-
 - author: 冷軌
   author_link: https://www.facebook.com/ksp200439
   date_added: '2025-03-31'
   image: /assets/images/gallery/kaltespur.webp
   title: 翹屁屁YCH
-  work_link: https://www.facebook.com/ksp200439/posts/pfbid0dQnbs53SPcjP9AFsVWsCGbtQGBccPkZjt8hfYP4bSiDKyXCHLcJ44QXvsGvTMmy7l
-
+  work_link: >-
+    https://www.facebook.com/ksp200439/posts/pfbid0dQnbs53SPcjP9AFsVWsCGbtQGBccPkZjt8hfYP4bSiDKyXCHLcJ44QXvsGvTMmy7l
 - author: Macy Wang
   author_link: https://www.facebook.com/wang.y.xuan.779
   date_added: '2025-03-25'
@@ -140,6 +145,11 @@
   date_added: '2025-03-25'
   image: /assets/images/gallery/loyn_comm_20.webp
   title: 撥圍巾XDDD
+- author: さわD
+  author_link: https://x.com/sutunununu
+  date_added: '2025-03-25'
+  image: /assets/images/gallery/loyn_comm_23.webp
+  title: 數碼寶貝風格
 - author: へばろーだ
   author_link: https://x.com/hebaroda03
   date_added: '2025-03-25'
@@ -150,11 +160,6 @@
   date_added: '2025-03-25'
   image: /assets/images/gallery/loyn_comm_22.webp
   title: 吃甜點
-- author: さわD
-  author_link: https://x.com/sutunununu
-  date_added: '2025-03-25'
-  image: /assets/images/gallery/loyn_comm_23.webp
-  title: 數碼寶貝風格
 - author: capella
   author_link: https://x.com/capella_pera
   date_added: '2025-03-25'
