@@ -5,7 +5,7 @@ permalink: /
 ---
 Welcome to Loyn’s lair, home of the happy little furred dragon. So glad you are here!
 
-This secret corner is where you’ll find Loyn’s commissioned art and some fun snapshots from past events. Huge thanks to the artists and friends who helped bring Loyn to life and capture all these moments!
+This secret corner is where you’ll find Loyn’s commissioned art and some snapshots from past events. Huge thanks to the artists and friends who helped bring Loyn to life and capture all these moments!
 
 <p>
 There’s also a cute little set of 
