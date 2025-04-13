@@ -34,7 +34,7 @@ p, ul, ol {
 
 @media only screen and (min-width: 1220px) {
   p, ul, ol {
-    font-size: 19px;
+    font-size: 18px;
   }
 }
 
@@ -420,8 +420,8 @@ header h1 {
 }
 
 .social-icon-spacing {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 10px;
+  margin-right: 10px;
   vertical-align: top;
 }
 
@@ -477,7 +477,6 @@ footer .highlight {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -502,34 +501,13 @@ footer .highlight {
   }
 }
 
-/* Bio 部分的樣式 */
-.bio-section {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
-  animation: fadeIn 0.6s ease;
-}
-
-.bio-section h2 {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.bio-section p {
-  margin: 10px 0;
-}
 
 /* 主圖片樣式 */
 .main-image {
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  max-width: 100%;
+  height: auto;
 }
-
-.main-image:hover {
-  transform: scale(1.02);
-}
-
 
 /* Bio 部分的响应式样式 */
 .bio-section {
@@ -546,6 +524,7 @@ footer .highlight {
 .bio-grid {
   display: grid;
   gap: 1rem;
+  font-size: 18px;
 }
 
 .bio-item {

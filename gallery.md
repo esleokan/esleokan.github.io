@@ -7,9 +7,7 @@ permalink: /gallery/
 <div class="content">
 <!--  <h2 >Note</h2> -->
 <p>
-<strong> I'm not the artist. </strong> This is a fursonal archive to keep everything in one place.</p>
-<p> All the pieces were commissioned or gifted by the amazing artists.
- I really appreciate them!
+I'm not the artist. Just a fursonal archive to keep the commissioned and gifted works by the artists. I appreciate them!
 </p>
 </div>
 

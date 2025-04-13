@@ -6,22 +6,22 @@ permalink: /
 
 <div class="content-wrapper">
   <div class="text-content">
-    <p>Welcome to Loyn's lair, home of the happy little furred dragon!</p>
+    <p>Hello! Welcome to Loyn's lair, home of the cheerful little furred dragon!</p>
     
-    <p>Here you'll find Loyn’s commissioned art and fursuit photos. Big thanks to all the artists and friends who helped bring him to life!</p>
+    <p>Here you'll find Loyn’s commissioned art and fursuit photos. Huge thanks to all the artists and friends who brought Loyn to life!</p>
     
     <p>
-    There's also a cute
+    A cute
 <a href="https://t.me/addstickers/loynn" class="telegram-link" target="_blank" rel="noopener noreferrer">
 Telegram sticker
-</a> set of Loyn to cheer up your chats!
+</a> set of Loyn is available to cheer up your chats!
     </p>
     
     <p>For Loyn's latest adventures, please check out public posts on X and Facebook!</p>
   </div>
   
   <div class="image-content">
-    <img src="/assets/images/index_hammer.webp" alt="2705132-11.output" class="main-image">
+    <img src="/assets/images/hihihi.webp" alt="2705132-11.output" class="main-image">
   </div>
 </div>
 
@@ -31,15 +31,19 @@ Telegram sticker
   <div class="bio-grid">
     <div class="bio-item">
       <span class="bio-label">Name:</span>
-      <span class="bio-value">Loyn, 洛恩 (Fursona)/ Leo Kan (IRL)</span>
+      <span class="bio-value">Loyn, 洛恩 (Fursona) / Leo Kan (IRL)</span>
     </div>
     <div class="bio-item">
       <span class="bio-label">Born in:</span>
       <span class="bio-value">Toulouse, France 🇫🇷 (Fursona) / Taiwan 🇹🇼 (IRL)</span>
     </div>
     <div class="bio-item">
+      <span class="bio-label">Currently in:</span>
+      <span class="bio-value">Taipei, Taiwan 🇹🇼  </span>
+    </div>
+    <div class="bio-item">
       <span class="bio-label">Languages:</span>
-      <span class="bio-value">中文(母語), English (fluent), Français (un peu)</span>
+      <span class="bio-value">中文, English, Français (un peu)</span>
     </div>
     <div class="bio-item">
       <span class="bio-label">Hobbies:</span>
@@ -50,7 +54,7 @@ Telegram sticker
       <span class="bio-value">Game soundtracks, J-POP</span>
     </div>
     <div class="bio-item">
-      <span class="bio-label">Favorite foods:</span>
+      <span class="bio-label">Fav. foods:</span>
       <span class="bio-value">Croissants, duck confit, sweet desserts, and anything matcha-based</span>
     </div>
     <div class="bio-item social-bio-item">
