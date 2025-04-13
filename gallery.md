@@ -5,9 +5,11 @@ permalink: /gallery/
 ---
 
 <div class="content">
-  <h2 >Note</h2>
+<!--  <h2 >Note</h2> -->
 <p>
-<strong> I'm not the artist of the works in this gallery. </strong> This is a personal archive to keep everything in one place. All artworks were either commissioned or gifted by the artists. I really appreciate them.
+<strong> I'm not the artist. </strong> This is a fursonal archive to keep everything in one place.</p>
+<p> All the pieces were commissioned or gifted by the amazing artists.
+ I really appreciate them!
 </p>
 </div>
 

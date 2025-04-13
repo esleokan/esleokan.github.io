@@ -1,3 +1,4 @@
+/* 原有的基本樣式 */
 body {
   font-family: 'Red Hat Text', 'Muli', sans-serif;
   background-color: #eee;
@@ -419,8 +420,8 @@ header h1 {
 }
 
 .social-icon-spacing {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 8px;
+  margin-right: 8px;
   vertical-align: top;
 }
 
@@ -443,4 +444,187 @@ footer .copyright {
 
 footer .highlight {
   font-weight: bold;
+}
+
+/* 首頁兩欄布局樣式 */
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0 40px 0;
+  animation: fadeIn 0.6s ease;
+}
+
+/* 桌面版的兩欄布局 (大於 600px) */
+@media (min-width: 601px) {
+  .content-wrapper {
+    flex-direction: row;
+  }
+  
+  .text-content {
+    flex: 0 0 70%;
+    padding-right: 30px;
+  }
+  
+  .image-content {
+    flex: 0 0 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 確保圖片有效的顯示 */
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* 移動版的單欄布局 (小於或等於 600px) */
+@media (max-width: 600px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .text-content, .image-content {
+    flex: 0 0 100%;
+  }
+  
+  .image-content {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .image-content img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+}
+
+/* Bio 部分的樣式 */
+.bio-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  animation: fadeIn 0.6s ease;
+}
+
+.bio-section h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.bio-section p {
+  margin: 10px 0;
+}
+
+/* 主圖片樣式 */
+.main-image {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.main-image:hover {
+  transform: scale(1.02);
+}
+
+
+/* Bio 部分的响应式样式 */
+.bio-section {
+  margin: 2rem 0;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.bio-section h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.bio-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.bio-item {
+  display: flex;
+  align-items: baseline;
+}
+
+.bio-label {
+  font-weight: bold;
+  min-width: 120px;
+  color: #555;
+  margin-right: 0.5rem;
+}
+
+.bio-value {
+  flex: 1;
+}
+
+.social-icons {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.social-icon-spacing {
+  margin-left: 8px;
+  margin-right: 8px;
+  vertical-align: top;
+}
+
+.social-bio-item {
+  align-items: flex-start;
+}
+
+.social-icon {
+  width: 35px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* 移动设备的响应式布局 */
+@media (max-width: 768px) {
+  .bio-item {
+    flex-direction: column;
+    margin-bottom: 0.8rem;
+  }
+
+  .bio-label {
+    margin-bottom: 0.2rem;
+  }
+
+  .social-icons {
+    margin-top: 0.5rem;
+  }
+}
+
+/* 更小屏幕设备的额外调整 */
+@media (max-width: 480px) {
+  .bio-section {
+    padding: 1rem;
+  }
+
+  .bio-grid {
+    gap: 0.8rem;
+  }
+}
+
+/* 如果你希望在中等屏幕上使用两列布局 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 社交图标可能需要占据整行 */
+  .bio-grid .bio-item:last-child {
+    grid-column: 1 / -1;
+  }
 }

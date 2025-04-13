@@ -3,6 +3,14 @@ layout: default
 title: Fursuit
 permalink: /fursuit/
 ---
+<div class="content">
+<p>
+Fursuit made by  <a href="https://www.furmony.com/" class="telegram-link" target="_blank" rel="noopener noreferrer">
+Furmony studio</a>
+</p>
+</div>
+
+
 <div class="fursuit-grid">
   {% for item in site.data.fursuit %}
     <div class="grid-item fade-in" tabindex="0">
