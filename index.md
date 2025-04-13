@@ -31,7 +31,7 @@ Telegram sticker
   <div class="bio-grid">
     <div class="bio-item">
       <span class="bio-label">Name:</span>
-      <span class="bio-value">Loyn, 洛恩, Leo Kan</span>
+      <span class="bio-value">Loyn, 洛恩 (Fursona)/ Leo Kan (IRL)</span>
     </div>
     <div class="bio-item">
       <span class="bio-label">Born in:</span>
@@ -43,7 +43,7 @@ Telegram sticker
     </div>
     <div class="bio-item">
       <span class="bio-label">Hobbies:</span>
-      <span class="bio-value">Furry fandom, cycling, photography, exploring bookstores, drawing and work</span>
+      <span class="bio-value">Furry fandom 🐾 , cycling 🚲, photography 📷, exploring bookstores 📖, drawing ✏️  and work 💼</span>
     </div>
     <div class="bio-item">
       <span class="bio-label">Music:</span>
