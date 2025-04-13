@@ -502,14 +502,12 @@ footer .highlight {
 }
 
 
-/* 主圖片樣式 */
 .main-image {
   border-radius: 8px;
   max-width: 100%;
   height: auto;
 }
 
-/* Bio 部分的响应式样式 */
 .bio-section {
   margin: 2rem 0;
   background-color: #eee;
@@ -569,7 +567,6 @@ footer .highlight {
   transform: scale(1.1);
 }
 
-/* 移动设备的响应式布局 */
 @media (max-width: 768px) {
   .bio-item {
     flex-direction: column;
@@ -585,7 +582,6 @@ footer .highlight {
   }
 }
 
-/* 更小屏幕设备的额外调整 */
 @media (max-width: 480px) {
   .bio-section {
     padding: 1rem;
@@ -596,13 +592,11 @@ footer .highlight {
   }
 }
 
-/* 如果你希望在中等屏幕上使用两列布局 */
 @media (min-width: 769px) and (max-width: 1024px) {
   .bio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* 社交图标可能需要占据整行 */
   .bio-grid .bio-item:last-child {
     grid-column: 1 / -1;
   }

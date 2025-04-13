@@ -8,7 +8,7 @@ permalink: /
   <div class="text-content">
     <p>Hello! Welcome to Loyn's lair, home of the cheerful little furred dragon!</p>
     
-    <p>Here you'll find Loyn’s commissioned art and fursuit photos. Huge thanks to all the artists and friends who brought Loyn to life!</p>
+    <p>Here you'll find Loyn’s commissioned <a href="https://loyn.me/gallery" class="telegram-link">art</a> and <a href="https://loyn.me/fursuit" class="telegram-link">fursuit</a> photos. Huge thanks to all the artists and friends who brought Loyn to life!</p>
     
     <p>
     A cute
@@ -25,7 +25,6 @@ Telegram sticker
   </div>
 </div>
 
-<!-- 改进的 Bio 部分 HTML -->
 <div class="bio-section">
   <h2>Bio</h2>
   <div class="bio-grid">
@@ -60,11 +59,22 @@ Telegram sticker
     <div class="bio-item social-bio-item">
       <span class="bio-label">Social:</span>
       <div class="social-icons">
-        <a href="https://x.com/loynuwu"><img src="/assets/images/social/x.png" alt="X" class="social-icon social-icon-spacing"></a>
-        <a href="https://www.facebook.com/loynuwu"><img src="/assets/images/social/fb.png" alt="Facebook" class="social-icon social-icon-spacing"></a>
-        <a href="https://www.plurk.com/Leo_os"><img src="/assets/images/social/plurk.webp" alt="Plurk" class="social-icon social-icon-spacing"></a>
-        <a href="https://www.strava.com/athletes/leokan"><img src="/assets/images/social/strava.png" alt="Strava" class="social-icon social-icon-spacing"></a>
-        <a href="https://linktr.ee/loyn"><img src="/assets/images/social/linktree.svg" alt="Linktree" class="social-icon social-icon-spacing"></a>
+<a href="https://x.com/loynuwu" target="_blank" rel="noopener noreferrer">
+  <img src="/assets/images/social/x.png" alt="X" class="social-icon social-icon-spacing">
+</a>
+<a href="https://www.facebook.com/loynuwu" target="_blank" rel="noopener noreferrer">
+  <img src="/assets/images/social/fb.png" alt="Facebook" class="social-icon social-icon-spacing">
+</a>
+<a href="https://www.plurk.com/Leo_os" target="_blank" rel="noopener noreferrer">
+  <img src="/assets/images/social/plurk.webp" alt="Plurk" class="social-icon social-icon-spacing">
+</a>
+<a href="https://www.strava.com/athletes/leokan" target="_blank" rel="noopener noreferrer">
+  <img src="/assets/images/social/strava.png" alt="Strava" class="social-icon social-icon-spacing">
+</a>
+<a href="https://linktr.ee/loyn" target="_blank" rel="noopener noreferrer">
+  <img src="/assets/images/social/linktree.svg" alt="Linktree" class="social-icon social-icon-spacing">
+</a>
+
       </div>
     </div>
   </div>
