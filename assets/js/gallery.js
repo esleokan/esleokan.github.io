@@ -1,4 +1,7 @@
-// 使用事件委派和防抖優化的事件處理
+// This file is being deprecated in favor of the modular approach
+// Keeping it for backward compatibility
+
+// Debounce function for optimization
 const debounce = (func, wait) => {
   let timeout;
   return function executedFunction(...args) {
@@ -11,31 +14,57 @@ const debounce = (func, wait) => {
   };
 };
 
-// 使用 getElementsByClassName 優化選擇器
+// Handle Gallery and Fursuit page interactions
 const handleGalleryInteraction = () => {
-  const gallery = document.querySelector('.gallery-grid');
-  if (!gallery) return;
+  console.log('Legacy gallery interaction handler executed - consider using the module version instead');
+  
+  // Import and use the new module
+  import('./modules/gallery.js').then(module => {
+    // Call the module's initialization function
+    if (typeof module.initGalleryHandlers === 'function') {
+      module.initGalleryHandlers();
+    }
+  }).catch(error => {
+    console.error('Failed to load gallery module:', error);
+    
+    // Fallback to legacy implementation
+    legacyGalleryImplementation();
+  });
+};
 
+// Legacy implementation for fallback
+function legacyGalleryImplementation() {
   const isMobile = window.innerWidth <= 600;
   
-  // 使用事件委派處理點擊事件
-  gallery.addEventListener('click', (e) => {
+  // Use event delegation for click events
+  document.addEventListener('click', (e) => {
     if (!isMobile) return;
     
     const gridItem = e.target.closest('.grid-item');
     if (gridItem) {
+      // Get all other grid items in the same container
+      const container = gridItem.closest('.grid, .fursuit-grid');
+      if (container) {
+        const items = container.querySelectorAll('.grid-item');
+        items.forEach(item => {
+          if (item !== gridItem) {
+            item.classList.remove('overlay-active');
+          }
+        });
+      }
+      
       gridItem.classList.toggle('overlay-active');
     }
   });
 
-  // 監聽視窗大小改變
+  // Listen for window resize
   const handleResize = debounce(() => {
     const newIsMobile = window.innerWidth <= 600;
     if (newIsMobile !== isMobile) {
-      // 如果切換到桌面版，移除所有 overlay-active 類
+      // If switched to desktop view, remove all overlay-active classes
       if (!newIsMobile) {
-        const items = document.getElementsByClassName('grid-item');
-        Array.from(items).forEach(item => {
+        const items = document.querySelectorAll('.grid-item');
+        items.forEach(item => {
           item.classList.remove('overlay-active');
         });
       }
@@ -43,7 +72,15 @@ const handleGalleryInteraction = () => {
   }, 250);
 
   window.addEventListener('resize', handleResize);
-};
+}
 
-// 當 DOM 載入完成後初始化
-document.addEventListener('DOMContentLoaded', handleGalleryInteraction); 
+// When DOM is loaded, initialize
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', handleGalleryInteraction);
+} else {
+  // If DOM is already loaded, execute directly
+  handleGalleryInteraction();
+}
+
+// Ensure function is available globally
+window.handleGalleryInteraction = handleGalleryInteraction; 

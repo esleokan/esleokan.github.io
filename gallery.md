@@ -5,10 +5,12 @@ permalink: /gallery/
 ---
 
 <div class="content">
-<!--  <h2 >Note</h2> -->
-<p>
-I'm not the artist. Just a fursonal archive to keep the commissioned and gifted works by the artists. I appreciate them!
-</p>
+  <p class="lang-en">
+    I'm not the artist. Just a fursonal archive to keep the commissioned and gifted works by the artists. I appreciate them!
+  </p>
+  <p class="lang-zh">
+    我不是繪師，這邊僅作為個龍展示各繪師的委託作品。感謝他們！
+  </p>
 </div>
 
 <div class="grid">

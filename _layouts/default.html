@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
   {% include head.html %}
   <body>
     {% include header.html %}
     
-    <main>
+    <main id="page-content">
       {{ content }}
     </main>
     
     {% include footer.html %}
     
-    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-<footer>
-  <div class="copyright">© 2025 Loyn's lair </div>
-</footer>    
+    <script type="module" src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </body>
 </html>

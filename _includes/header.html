@@ -5,9 +5,23 @@
     <div></div>
     <div></div>
   </div>
+  <div class="language-switcher">
+    <a href="#" class="tab-link active" data-lang="en">EN</a>
+    <span class="lang-separator">|</span>
+    <a href="#" class="tab-link" data-lang="zh">中</a>
+  </div>
   <div class="tabs" id="tabMenu">
-    <a href="{{ '/' | relative_url }}" class="tab-link {% if page.url == '/' %}active{% endif %}">Loyn</a>
-    <a href="{{ '/gallery' | relative_url }}" class="tab-link {% if page.url == '/gallery/' %}active{% endif %}">Gallery</a>
-    <a href="{{ '/fursuit' | relative_url }}" class="tab-link {% if page.url == '/fursuit/' %}active{% endif %}">Fursuit</a>
+    <a href="{{ '/' | relative_url }}" class="tab-link {% if page.url == '/' %}active{% endif %}" data-path="{{ '/' | relative_url }}">
+      <span class="lang-en">Home</span>
+      <span class="lang-zh">簡介</span>
+    </a>
+    <a href="{{ '/gallery' | relative_url }}" class="tab-link {% if page.url == '/gallery/' %}active{% endif %}" data-path="{{ '/gallery' | relative_url }}">
+      <span class="lang-en">Gallery</span>
+      <span class="lang-zh">畫廊</span>
+    </a>
+    <a href="{{ '/fursuit' | relative_url }}" class="tab-link {% if page.url == '/fursuit/' %}active{% endif %}" data-path="{{ '/fursuit' | relative_url }}">
+      <span class="lang-en">Fursuit</span>
+      <span class="lang-zh">毛毛</span>
+    </a>
   </div>
 </header>

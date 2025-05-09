@@ -1,4 +1,12 @@
-/* 原有的基本樣式 */
+/* ==========================================================================
+   基本設置
+   ========================================================================== */
+
+/* 基本元素樣式 */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Red Hat Text', 'Muli', sans-serif;
   background-color: #eee;
@@ -6,18 +14,13 @@ body {
   padding: 0;
 }
 
-/* 全局添加box-sizing確保元素寬度計算正確 */
-* {
-  box-sizing: border-box;
-}
-
-/* 確保所有內容容器都有正確的最大寬度設置 */
-.content, .grid, .fursuit-grid, header, .tabs {
+/* 全局設置 */
+.content, .grid, .fursuit-grid, header, .tabs, .language-switcher {
   max-width: 100%;
   overflow-x: hidden;
 }
 
-/* 添加 Muli 字體和段落樣式 */
+/* 文字和排版 */
 p, ul, ol {
   margin-top: 15px;
   font-size: 15px;
@@ -26,18 +29,89 @@ p, ul, ol {
   letter-spacing: 0em;
 }
 
-@media only screen and (min-width: 768px) {
-  p, ul, ol {
-    font-size: 17px;
-  }
+.text-center {
+  text-align: center;
 }
 
-@media only screen and (min-width: 1220px) {
-  p, ul, ol {
-    font-size: 18px;
-  }
+/* 頁面過渡效果 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
+#page-content {
+  transition: opacity 0.2s ease-in-out;
+}
+
+#page-content h1, 
+#page-content h2, 
+#page-content h3 {
+  transition: none;
+  animation: none;
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   語言切換功能
+   ========================================================================== */
+
+/* 語言內容設置 */
+.lang-zh, .lang-en {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+html.js-loaded .lang-zh,
+html.js-loaded .lang-en {
+  opacity: 1;
+}
+
+/* 語言切換器 */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: auto;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+
+.language-switcher .tab-link {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.language-switcher .tab-link:hover {
+  background-color: #dcdcdc;
+}
+
+html.js-loaded .language-switcher .tab-link.active {
+  background-color: #bbb;
+  color: #333;
+}
+
+.lang-separator {
+  margin: 0 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ==========================================================================
+   頁首和導航
+   ========================================================================== */
+
+/* 頁首樣式 */
 header {
   background-color: #eee;
   padding: 80px 40px 30px 40px;
@@ -47,6 +121,12 @@ header {
   max-width: 1100px;
   margin: auto;
   position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 header h1 a {
@@ -59,29 +139,7 @@ header h1 a:hover {
   color: #b8d9ce;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  cursor: pointer;
-  position: absolute;
-  top: 40px;
-  right: 40px;
-}
-
-.menu-toggle div {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  border-radius: 2px;
-}
-
+/* 導航標籤 */
 .tabs {
   display: flex;
   gap: 10px;
@@ -91,7 +149,7 @@ header h1 {
 .tabs .tab-link {
   background-color: #f0f0f0;
   color: #333;
-  padding: 10px 18px;
+  padding: 8px 16px;
   border: none;
   border-radius: 999px;
   font-size: 15px;
@@ -111,6 +169,34 @@ header h1 {
   color: #333;
 }
 
+.tabs .tab-link .lang-en,
+.tabs .tab-link .lang-zh {
+  display: none;
+}
+
+/* 漢堡選單 */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   內容區域樣式
+   ========================================================================== */
+
+/* 通用內容容器 */
 .content {
   padding: 20px 40px;
   max-width: 1100px;
@@ -118,7 +204,117 @@ header h1 {
   animation: fadeIn 0.6s ease;
 }
 
-/* 使用 CSS 多欄實現瀑布流效果 */
+/* 首頁兩欄佈局 */
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 40px 0;
+  animation: fadeIn 0.6s ease;
+}
+
+.text-content {
+  flex: 0 0 70%;
+  padding-right: 30px;
+}
+
+.image-content {
+  flex: 0 0 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.main-image {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 個人資料區塊 */
+.bio-section {
+  margin: 2rem 0;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.bio-section h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.bio-grid {
+  display: grid;
+  gap: 1rem;
+  font-size: 18px;
+}
+
+.bio-item {
+  display: flex;
+  align-items: baseline;
+}
+
+.bio-label {
+  font-weight: bold;
+  min-width: 120px;
+  color: #555;
+  margin-right: 0.5rem;
+}
+
+.bio-value {
+  flex: 1;
+}
+
+/* 社交媒體圖標 */
+.social-icons {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.social-icon-spacing {
+  margin-left: 8px;
+  margin-right: 8px;
+  vertical-align: top;
+}
+
+.social-bio-item {
+  align-items: flex-start;
+}
+
+.social-icon {
+  width: 35px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* 電報連結樣式 */
+.telegram-link {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px dotted #666;
+}
+
+.telegram-link:hover {
+  color: #007bff;
+  border-bottom-color: #007bff;
+}
+
+/* ==========================================================================
+   畫廊頁面樣式
+   ========================================================================== */
+
+/* 通用網格佈局 */
 .grid {
   column-count: 3;
   column-gap: 16px;
@@ -142,7 +338,7 @@ header h1 {
   display: block;
 }
 
-/* overlay 效果 */
+/* 覆蓋層效果 */
 .overlay {
   position: absolute;
   top: 0;
@@ -192,125 +388,18 @@ header h1 {
   text-decoration: underline;
 }
 
-/* 僅在大於 600px 的螢幕上啟用 hover 效果 */
-@media (min-width: 601px) {
-  .grid-item:hover .overlay,
-  .fursuit-grid .grid-item:hover .overlay {
-    opacity: 1;
-  }
-  .fursuit-grid .grid-item:hover .overlay {
-    opacity: 1;
-  }
-  
-}
-
 /* 桌面端懸停效果 */
 .grid-item:hover .overlay {
   opacity: 1;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* ==========================================================================
+   獸裝頁面樣式
+   ========================================================================== */
 
-@media (min-width: 601px) {
-  .grid-item:hover .overlay,
-  .fursuit-grid .grid-item:hover .overlay {
-    opacity: 1;
-  }
-  
-}
-
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    padding: 40px 20px 20px 20px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .tabs {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-    box-sizing: border-box;
-  }
-
-  .tabs.show {
-    display: flex;
-  }
-
-  .tabs .tab-link {
-    width: 100%;
-    text-align: right;
-    padding-right: 20px;
-    box-sizing: border-box;
-    border-radius: 5px; /* 改為較小的圓角 */
-    display: flex;
-    justify-content: space-between;
-  }
-
-  /* 確保內容區不會溢出 */
-  .content {
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-
-  /* 修正網格容器寬度 */
-  .grid, .fursuit-grid {
-    column-count: 1;
-    padding: 0 20px 20px 20px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* 手機模式下的 overlay 處理 */
-  .grid-item {
-    cursor: pointer;
-  }
-
-  .grid-item img {
-    pointer-events: none;
-  }
-
-  /* 移除所有預設的 hover 效果 */
-  .grid-item:hover .overlay,
-  .fursuit-grid .grid-item:hover .overlay {
-    opacity: 0; 
-  }
-
-  .grid-item .overlay,
-  .fursuit-grid .grid-item .overlay {
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .grid-item.overlay-active .overlay,
-  .fursuit-grid .grid-item.overlay-active .overlay {
-    opacity: 1;
-  }
-}
-
-/* 添加新的媒體查詢 */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .grid {
-    column-count: 2;
-  }
-}
-
-/* 為 fursuit 頁面自定義的網格佈局 */
+/* 獸裝網格佈局 */
 .fursuit-grid {
-  column-count: 2;  /* 設置為兩欄 */
+  column-count: 2;
   column-gap: 16px;
   max-width: 1100px;
   margin: auto;
@@ -373,59 +462,10 @@ header h1 {
   opacity: 1;
 }
 
-/* 手機模式下的調整 */
-@media (max-width: 600px) {
-  .fursuit-grid {
-    column-count: 1;  /* 一欄 */
-  }
+/* ==========================================================================
+   頁腳樣式
+   ========================================================================== */
 
-  .fursuit-grid .grid-item {
-    cursor: pointer;
-  }
-
-  .fursuit-grid .grid-item img {
-    pointer-events: none;
-  }
-
-  .fursuit-grid .grid-item .overlay {
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .fursuit-grid .grid-item.overlay-active .overlay {
-    opacity: 1;
-  }
-  
-  /* 手機模式下的頁腳調整 */
-  footer {
-    padding: 20px;
-    font-size: 12px;
-  }
-}
-
-.text-center {
-  text-align: center;
-}
-
-.telegram-link {
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-    border-bottom: 1px dotted #666;
-}
-
-.telegram-link:hover {
-    color: #007bff;
-    border-bottom-color: #007bff;
-}
-
-.social-icon-spacing {
-  margin-left: 10px;
-  margin-right: 10px;
-  vertical-align: top;
-}
-
-/* 頁腳樣式 */
 footer {
   text-align: center;
   padding: 0px 0px 10px 0px;
@@ -446,42 +486,163 @@ footer .highlight {
   font-weight: bold;
 }
 
-/* 首頁兩欄布局樣式 */
-.content-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0px 0 40px 0;
-  animation: fadeIn 0.6s ease;
+/* ==========================================================================
+   響應式設計 - 桌面版 (中屏幕)
+   ========================================================================== */
+
+@media only screen and (min-width: 768px) {
+  p, ul, ol {
+    font-size: 17px;
+  }
 }
 
-/* 桌面版的兩欄布局 (大於 600px) */
+@media only screen and (min-width: 1220px) {
+  p, ul, ol {
+    font-size: 18px;
+  }
+}
+
 @media (min-width: 601px) {
+  /* 桌面版覆蓋層效果 */
+  .grid-item:hover .overlay,
+  .fursuit-grid .grid-item:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* 首頁兩欄佈局 */
   .content-wrapper {
     flex-direction: row;
   }
-  
-  .text-content {
-    flex: 0 0 70%;
-    padding-right: 30px;
-  }
-  
-  .image-content {
-    flex: 0 0 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* 確保圖片有效的顯示 */
-  .image-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+}
+
+/* 中等桌面屏幕 */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .grid {
+    column-count: 2;
   }
 }
 
-/* 移動版的單欄布局 (小於或等於 600px) */
+/* 平板佈局 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bio-grid .bio-item:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ==========================================================================
+   響應式設計 - 移動版
+   ========================================================================== */
+
 @media (max-width: 600px) {
+  /* 頁首和導航 */
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 40px 20px 20px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* 語言切換器 */
+  .language-switcher {
+    display: none;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    position: static;
+  }
+  
+  .language-switcher.show {
+    display: flex;
+  }
+  
+  .language-switcher .tab-link {
+    padding: 5px 15px;
+    font-size: 14px;
+  }
+  
+  .lang-separator {
+    display: flex;
+    align-items: center;
+    margin: 0 8px;
+    font-size: 14px;
+  }
+
+  /* 導航標籤 */
+  .tabs {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .tabs.show {
+    display: flex;
+  }
+
+  .tabs .tab-link {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* 內容區域 */
+  .content {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* 網格佈局 */
+  .grid, .fursuit-grid {
+    column-count: 1;
+    padding: 0 20px 20px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 覆蓋層處理 */
+  .grid-item {
+    cursor: pointer;
+  }
+
+  .grid-item img {
+    pointer-events: none;
+  }
+
+  .grid-item:hover .overlay,
+  .fursuit-grid .grid-item:hover .overlay {
+    opacity: 0; 
+  }
+
+  .grid-item .overlay,
+  .fursuit-grid .grid-item .overlay {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .grid-item.overlay-active .overlay,
+  .fursuit-grid .grid-item.overlay-active .overlay {
+    opacity: 1;
+  }
+
+  /* 首頁佈局 */
   .content-wrapper {
     flex-direction: column;
   }
@@ -499,74 +660,26 @@ footer .highlight {
     max-width: 100%;
     border-radius: 8px;
   }
+
+  /* 頁腳 */
+  footer {
+    padding: 20px;
+    font-size: 12px;
+  }
 }
 
+/* 小型移動設備 */
+@media (max-width: 480px) {
+  .bio-section {
+    padding: 1rem;
+  }
 
-.main-image {
-  border-radius: 8px;
-  max-width: 100%;
-  height: auto;
+  .bio-grid {
+    gap: 0.8rem;
+  }
 }
 
-.bio-section {
-  margin: 2rem 0;
-  background-color: #eee;
-  border-radius: 10px;
-}
-
-.bio-section h2 {
-  margin-bottom: 1.5rem;
-  color: #333;
-}
-
-.bio-grid {
-  display: grid;
-  gap: 1rem;
-  font-size: 18px;
-}
-
-.bio-item {
-  display: flex;
-  align-items: baseline;
-}
-
-.bio-label {
-  font-weight: bold;
-  min-width: 120px;
-  color: #555;
-  margin-right: 0.5rem;
-}
-
-.bio-value {
-  flex: 1;
-}
-
-.social-icons {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.social-icon-spacing {
-  margin-left: 8px;
-  margin-right: 8px;
-  vertical-align: top;
-}
-
-.social-bio-item {
-  align-items: flex-start;
-}
-
-.social-icon {
-  width: 35px;
-  height: auto;
-  transition: transform 0.2s ease;
-}
-
-.social-icon:hover {
-  transform: scale(1.1);
-}
-
+/* 中型移動設備 */
 @media (max-width: 768px) {
   .bio-item {
     flex-direction: column;
@@ -579,25 +692,5 @@ footer .highlight {
 
   .social-icons {
     margin-top: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .bio-section {
-    padding: 1rem;
-  }
-
-  .bio-grid {
-    gap: 0.8rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .bio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .bio-grid .bio-item:last-child {
-    grid-column: 1 / -1;
   }
 }
