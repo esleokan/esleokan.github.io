@@ -9,8 +9,8 @@ permalink: /fursuit/
     Furmony studio</a>
   </p>
   <p class="lang-zh">
-    毛毛由<a href="https://www.furmony.com/" class="telegram-link" target="_blank" rel="noopener noreferrer">
-    Furmony工作室</a>製作
+    毛毛與睡衣由 <a href="https://www.furmony.com/" class="telegram-link" target="_blank" rel="noopener noreferrer">
+    鴻萌造物</a> 製作
   </p>
 </div>
 

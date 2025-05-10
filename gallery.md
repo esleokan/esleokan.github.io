@@ -9,7 +9,7 @@ permalink: /gallery/
     I'm not the artist. Just a fursonal archive to keep the commissioned and gifted works by the artists. I appreciate them!
   </p>
   <p class="lang-zh">
-    我不是繪師，這邊僅作為個龍展示各繪師的委託作品。感謝他們！
+    我不是繪師，這邊僅為洛恩展示來自不同繪師的委託成品。感謝他們！
   </p>
 </div>
 
@@ -17,18 +17,16 @@ permalink: /gallery/
   {% for item in site.data.gallery %}
     <div class="grid-item fade-in" tabindex="0">
       {% if item.work_link %}
-        <a href="{{ item.work_link }}" target="_blank">
-          <img src="{{ item.image }}" alt="{{ item.title }}" />
-          <div class="overlay">
-            <div class="title"><a href="{{ item.work_link }}" target="_blank">{{ item.title }}</a></div>
-            <div class="artist">🎨 <a href="{{ item.author_link | default:'#' }}" target="_blank">{{ item.author }}</a></div>
-          </div>
-        </a>
+        <img src="{{ item.image }}" alt="{{ item.title }}" data-work-link="{{ item.work_link }}" />
+        <div class="overlay">
+          <div class="title" data-link="{{ item.work_link }}">{{ item.title }}</div>
+          <div class="artist">🎨 <span data-link="{{ item.author_link | default:'#' }}">{{ item.author }}</span></div>
+        </div>
       {% else %}
         <img src="{{ item.image }}" alt="{{ item.title }}" />
         <div class="overlay">
           <div class="title">{{ item.title }}</div>
-          <div class="artist">🎨 <a href="{{ item.author_link | default:'#' }}" target="_blank">{{ item.author }}</a></div>
+          <div class="artist">🎨 <span data-link="{{ item.author_link | default:'#' }}">{{ item.author }}</span></div>
         </div>
       {% endif %}
     </div>

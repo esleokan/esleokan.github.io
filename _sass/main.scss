@@ -81,7 +81,7 @@ html.js-loaded .lang-en {
 .language-switcher .tab-link {
   background-color: #f0f0f0;
   color: #333;
-  padding: 6px 12px;
+  padding: 3px 10px;
   border: none;
   border-radius: 999px;
   font-size: 14px;
@@ -97,7 +97,7 @@ html.js-loaded .lang-en {
 }
 
 html.js-loaded .language-switcher .tab-link.active {
-  background-color: #bbb;
+  background-color: #97C1F0;
   color: #333;
 }
 
@@ -149,7 +149,7 @@ header h1 a:hover {
 .tabs .tab-link {
   background-color: #f0f0f0;
   color: #333;
-  padding: 8px 16px;
+  padding: 10px 18px;
   border: none;
   border-radius: 999px;
   font-size: 15px;
@@ -360,15 +360,19 @@ header h1 a:hover {
 .overlay .title {
   margin-bottom: 10px;
   font-size: 16px;
+  font-weight: bold;
 }
 
-.overlay .title a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.overlay .title a:hover {
+.overlay .title a,
+.overlay .title[data-link] {
   color: #b8d9ce;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.overlay .title a:hover,
+.overlay .title[data-link]:hover {
+  color: #fff;
 }
 
 .overlay .artist {
@@ -377,15 +381,42 @@ header h1 a:hover {
   opacity: 0.9;
 }
 
-.overlay .artist a {
+.overlay .artist a,
+.overlay .artist span[data-link] {
   color: #b8d9ce;
   text-decoration: none;
   transition: color 0.3s;
 }
 
-.overlay .artist a:hover {
+.overlay .artist a:hover,
+.overlay .artist span[data-link]:hover {
   color: #fff;
-  text-decoration: underline;
+}
+
+/* 可點擊元素樣式 */
+.link-element {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.link-element:hover {
+  color: #b8d9ce;
+}
+
+.grid-item.overlay-active .link-element {
+  color: #b8d9ce;
+  text-decoration: none;
+}
+
+.grid-item:not(.overlay-active) .link-element {
+  pointer-events: none;
+}
+
+@media (min-width: 601px) {
+  .link-element {
+    pointer-events: auto !important;
+  }
 }
 
 /* 桌面端懸停效果 */
@@ -641,6 +672,27 @@ footer .highlight {
   .fursuit-grid .grid-item.overlay-active .overlay {
     opacity: 1;
   }
+  
+  /* 特殊標記讓用戶知道點擊後有功能 */
+  .grid-item:after {
+    content: '🔍';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+  
+  .grid-item.overlay-active:after {
+    display: none;
+  }
 
   /* 首頁佈局 */
   .content-wrapper {
@@ -665,6 +717,18 @@ footer .highlight {
   footer {
     padding: 20px;
     font-size: 12px;
+  }
+
+  /* 確保移動版覆蓋層內元素樣式一致 */
+  .grid-item.overlay-active .overlay .title[data-link],
+  .grid-item.overlay-active .overlay .artist span[data-link] {
+    color: #b8d9ce;
+    text-decoration: none;
+  }
+  
+  .grid-item.overlay-active .overlay .title[data-link]:active,
+  .grid-item.overlay-active .overlay .artist span[data-link]:active {
+    color: #fff;
   }
 }
 

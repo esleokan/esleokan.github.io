@@ -22,7 +22,7 @@ permalink: /
     </div>
     
     <div class="lang-zh">
-      <p>哈囉！歡迎來到愉悅小龍－洛恩的小窩！</p>
+      <p>哈囉！歡迎來到愉悅小龍－洛恩(Loyn)的小窩！</p>
       
       <p>這裡有洛恩的<a href="https://loyn.me/gallery" class="telegram-link">委託圖</a>和<a href="https://loyn.me/fursuit" class="telegram-link">毛毛</a>照片。非常感謝所有讓洛恩活靈活現的藝術家和朋友們！</p>
       
@@ -30,10 +30,10 @@ permalink: /
       洛恩也有可愛的
       <a href="https://t.me/addstickers/loynn" class="telegram-link" target="_blank" rel="noopener noreferrer">
       Telegram貼圖
-      </a>，可以為你的聊天室增添愉悅氣息！
+      </a>，希望可以為你的聊天室增添愉悅氣息！
       </p>
       
-      <p>想了解洛恩的最新動態，請查看X和Facebook上的公開貼文！</p>
+      <p>最新動態可以參考X和Facebook上的公開貼文！</p>
     </div>
   </div>
   
