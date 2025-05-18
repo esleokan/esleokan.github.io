@@ -73,7 +73,8 @@
   date_added: '2025-03-31'
   image: /assets/images/gallery/kaltespur.webp
   title: 翹屁屁YCH
-  work_link:  https://www.facebook.com/ksp200439/posts/pfbid0dQnbs53SPcjP9AFsVWsCGbtQGBccPkZjt8hfYP4bSiDKyXCHLcJ44QXvsGvTMmy7l
+  work_link: >-
+    https://www.facebook.com/ksp200439/posts/pfbid0dQnbs53SPcjP9AFsVWsCGbtQGBccPkZjt8hfYP4bSiDKyXCHLcJ44QXvsGvTMmy7l
 - author: Macy Wang
   author_link: https://www.facebook.com/wang.y.xuan.779
   date_added: '2025-03-25'
@@ -311,9 +312,21 @@
   title: 好帥好可愛
 - author: ジュン
   author_link: https://x.com/observer_rrh
-  date_added: '2025-03-25'
   image: /assets/images/gallery/loyn_comm_45.webp
   title: 好帥好可愛
+- author: ⅱタナカハヤシⅱ
+  author_link: https://skeb.jp/@4taka4hashi4
+  image: /assets/images/gallery/3004986-2.output.webp
+  title: YEAH！
+  work_link: https://skeb.jp/@4taka4hashi4/works/1
+- author: 妞龍
+  author_link: https://www.facebook.com/puii.liu
+  image: /assets/images/gallery/puii1.webp
+  title: 我愛工作！
+- author: 妞龍
+  author_link: https://www.facebook.com/puii.liu
+  image: /assets/images/gallery/puii2.webp
+  title: 飯友
 - author: クラウファ
   author_link: https://x.com/kurava1000
   date_added: '2025-03-25'
