@@ -9,7 +9,7 @@ permalink: /gallery/
     I'm not the artist. Just a fursonal archive to keep the commissioned and gifted works by the artists. I appreciate them!
   </p>
   <p class="lang-zh">
-    我不是繪師，這邊僅為洛恩展示來自不同繪師的委託成品。感謝他們！
+    我不是繪師，這邊是展示來自不同繪師筆下的洛恩。感謝他們！
   </p>
 </div>
 

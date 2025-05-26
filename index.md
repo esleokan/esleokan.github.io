@@ -24,7 +24,7 @@ permalink: /
     <div class="lang-zh">
       <p>哈囉！歡迎來到愉悅小龍－洛恩(Loyn)的小窩！</p>
       
-      <p>這裡有洛恩的<a href="https://loyn.me/gallery" class="telegram-link">委託圖</a>和<a href="https://loyn.me/fursuit" class="telegram-link">毛毛</a>照片。非常感謝所有讓洛恩活靈活現的藝術家和朋友們！</p>
+      <p>這裡有洛恩的<a href="https://loyn.me/gallery" class="telegram-link">委託圖</a>和<a href="https://loyn.me/fursuit" class="telegram-link">毛毛</a>照片。感謝這些繪師和朋友讓洛恩活靈活現！</p>
       
       <p>
       洛恩也有可愛的
@@ -56,7 +56,7 @@ permalink: /
       <span class="bio-label lang-en">Born in:</span>
       <span class="bio-label lang-zh">出生地：</span>
       <span class="bio-value lang-en">Toulouse, France 🇫🇷 (Fursona) / Taiwan 🇹🇼 (IRL)</span>
-      <span class="bio-value lang-zh">法國土魯斯 🇫🇷 (獸設) / 台灣 🇹🇼 (現實)</span>
+      <span class="bio-value lang-zh">土魯斯, 法國 🇫🇷 (獸設) / 台灣 🇹🇼 (現實)</span>
     </div>
     <div class="bio-item">
       <span class="bio-label lang-en">Currently in:</span>
@@ -86,7 +86,7 @@ permalink: /
       <span class="bio-label lang-en">Fav. foods:</span>
       <span class="bio-label lang-zh">喜好食物：</span>
       <span class="bio-value lang-en">Croissants, duck confit, sweet desserts, and anything matcha-based</span>
-      <span class="bio-value lang-zh">可頌, 油封鴨, 甜點, 和抹茶</span>
+      <span class="bio-value lang-zh">可頌, 油封鴨, 甜點, 和抹茶系列</span>
     </div>
     <div class="bio-item social-bio-item">
       <span class="bio-label lang-en">Social:</span>
