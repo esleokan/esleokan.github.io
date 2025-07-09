@@ -21,13 +21,13 @@ function toggleMenu() {
   const menuToggle = document.querySelector(".menu-toggle");
   
   if (tabMenu) {
-    tabMenu.classList.toggle("show");
+  tabMenu.classList.toggle("show");
   }
   
   if (langSwitcher) {
-    langSwitcher.classList.toggle("show");
-  }
-  
+  langSwitcher.classList.toggle("show");
+}
+
   // 更新 ARIA 狀態
   if (menuToggle) {
     const isExpanded = tabMenu && tabMenu.classList.contains("show");
@@ -63,7 +63,7 @@ function initResponsiveFeatures() {
       if (menuToggle) {
         menuToggle.setAttribute("aria-expanded", "false");
       }
-    }
+      }
   }, 250);
 
   // 監聽視窗大小變化
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 document.addEventListener('pageContentLoaded', function() {
   console.log('頁面內容載入完成');
-  initHomepageFeatures();
+  // 可以在這裡添加其他頁面動態載入後需要的功能
 });
 
 /**

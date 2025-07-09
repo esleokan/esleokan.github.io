@@ -31,7 +31,7 @@ permalink: /photography/
   {% endfor %}
 </div>
 
-<script src="/assets/js/gallery.js"></script>
+<script src="/assets/js/gallery.js"></script> 
 <script>
 // 簡化的隨機排序攝影作品
 function shufflePhotography() {
