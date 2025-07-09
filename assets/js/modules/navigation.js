@@ -9,12 +9,84 @@ import { switchLanguage } from './language.js';
 export function initNavigation() {
   const navTabs = document.querySelectorAll('.tabs .tab-link');
   
+  // Set initial history state if not already set
+  if (!history.state) {
+    const currentPath = window.location.pathname;
+    history.replaceState({ path: currentPath }, '', currentPath);
+  }
+  
+  // Set initial page type class
+  const pageContent = document.querySelector('#page-content');
+  if (pageContent) {
+    const currentPath = window.location.pathname;
+    const isHomePage = currentPath === '/' || currentPath === '';
+    const isGallery = currentPath.includes('/gallery');
+    const isFursuit = currentPath.includes('/fursuit');
+    const isPhotography = currentPath.includes('/photography');
+    
+    pageContent.classList.remove('home-page', 'gallery-page', 'fursuit-page', 'photography-page');
+    if (isHomePage) {
+      pageContent.classList.add('home-page');
+    } else if (isGallery) {
+      pageContent.classList.add('gallery-page');
+    } else if (isFursuit) {
+      pageContent.classList.add('fursuit-page');
+    } else if (isPhotography) {
+      pageContent.classList.add('photography-page');
+    }
+    
+    console.log('Set initial page class for:', currentPath);
+  }
+  
   // Handle history state changes
   window.addEventListener('popstate', function(event) {
-    console.log('popstate event', event.state);
+    console.log('popstate event', event.state, 'current path:', window.location.pathname);
     const state = event.state;
+    let targetPath;
+    
     if (state && state.path) {
-      loadContent(state.path, false);
+      targetPath = state.path;
+    } else {
+      // Fallback to current location if no state
+      targetPath = window.location.pathname;
+    }
+    
+    console.log('Navigating to:', targetPath);
+    
+    // Check if we're already on the target path
+    const currentPageContent = document.querySelector('#page-content');
+    const isHomePage = targetPath === '/' || targetPath === '';
+    const isGallery = targetPath.includes('/gallery');
+    const isFursuit = targetPath.includes('/fursuit');
+    const isPhotography = targetPath.includes('/photography');
+    
+    // Check if the current page content matches the target
+    let needsReload = true;
+    if (currentPageContent) {
+      if (isHomePage && currentPageContent.classList.contains('home-page')) {
+        needsReload = false;
+      } else if (isGallery && currentPageContent.classList.contains('gallery-page')) {
+        needsReload = false;
+      } else if (isFursuit && currentPageContent.classList.contains('fursuit-page')) {
+        needsReload = false;
+      } else if (isPhotography && currentPageContent.classList.contains('photography-page')) {
+        needsReload = false;
+      }
+    }
+    
+    if (needsReload) {
+      loadContent(targetPath, false);
+    } else {
+      // Just update the active tab without reloading content
+      const navTabs = document.querySelectorAll('.tabs .tab-link');
+      navTabs.forEach(tab => tab.classList.remove('active'));
+      
+      const currentTab = document.querySelector(`.tabs .tab-link[data-path="${targetPath}"]`);
+      if (currentTab) {
+        currentTab.classList.add('active');
+      }
+      
+      console.log('Content already matches, just updated tab state');
     }
   });
   
@@ -25,17 +97,43 @@ export function initNavigation() {
       e.preventDefault();
       const path = this.getAttribute('data-path');
       if (path) {
+        // Check if we're already on this path
+        if (window.location.pathname === path) {
+          console.log('Already on target path, no navigation needed');
+          return;
+        }
         loadContent(path);
       } else {
         console.error('No path attribute found on tab', this);
       }
     });
   });
+  
+  // Add SPA navigation to internal page links
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a');
+    if (!link) return;
+    
+    // Skip if this is a tab link (already handled above)
+    if (link.closest('.tabs')) return;
+    
+    const href = link.getAttribute('href');
+    
+    // Only handle internal page links (/, /gallery, /fursuit, /photography)
+    if (href && (href === '/' || href === '/gallery' || href === '/fursuit' || href === '/photography')) {
+      // Skip if it has target="_blank"
+      if (link.getAttribute('target') === '_blank') return;
+      
+      console.log('Internal page link clicked:', href);
+      e.preventDefault();
+      loadContent(href);
+    }
+  });
 }
 
 // Load page content using AJAX
 export async function loadContent(path, pushState = true) {
-  console.log('Loading content for path:', path);
+  console.log('Loading content for path:', path, 'pushState:', pushState);
   
   try {
     // Get current language
@@ -51,22 +149,20 @@ export async function loadContent(path, pushState = true) {
       currentTab.classList.add('active');
     }
     
-    // If first load or pushing history state
+    // Push state to history (for normal navigation)
     if (pushState) {
-      history.pushState({ path: path }, '', path);
-    }
-    
-    // If on the same page, no need to reload
-    if (window.location.pathname === path && !pushState) {
-      return;
+      // Only push if the path is different from current location
+      if (window.location.pathname !== path) {
+        history.pushState({ path: path }, '', path);
+        console.log('Pushed new state:', path);
+      } else {
+        console.log('Skipped push state - same path:', path);
+      }
     }
     
     // Don't hide the entire page, just fade the main content area
     const pageContent = document.querySelector('#page-content');
     if (pageContent) {
-      // Remember scroll position
-      const scrollPosition = window.scrollY;
-      
       // Fade out existing content (keep title visible)
       pageContent.style.opacity = '0.3';
       
@@ -90,15 +186,18 @@ export async function loadContent(path, pushState = true) {
         const isHomePage = path === '/' || path === '';
         const isGallery = path.includes('/gallery');
         const isFursuit = path.includes('/fursuit');
+        const isPhotography = path.includes('/photography');
         
         // Mark current page type
-        pageContent.classList.remove('home-page', 'gallery-page', 'fursuit-page');
+        pageContent.classList.remove('home-page', 'gallery-page', 'fursuit-page', 'photography-page');
         if (isHomePage) {
           pageContent.classList.add('home-page');
         } else if (isGallery) {
           pageContent.classList.add('gallery-page');
         } else if (isFursuit) {
           pageContent.classList.add('fursuit-page');
+        } else if (isPhotography) {
+          pageContent.classList.add('photography-page');
         }
         
         // Replace with new page content
@@ -132,6 +231,20 @@ export async function loadContent(path, pushState = true) {
           const fursuitContent = pageContent.querySelector('.fursuit-grid');
           if (fursuitContent) {
             fursuitContent.style.display = 'block';
+          }
+        } else if (isPhotography) {
+          // Make sure only Photography related content is shown
+          const nonPhotographyContent = pageContent.querySelectorAll('.content-wrapper, .bio-section, .grid:not(.fursuit-grid)');
+          nonPhotographyContent.forEach(el => {
+            if (el.parentNode === pageContent) {
+              el.style.display = 'none';
+            }
+          });
+          
+          // Ensure Photography content is visible (uses fursuit-grid class)
+          const photographyContent = pageContent.querySelector('.fursuit-grid');
+          if (photographyContent) {
+            photographyContent.style.display = 'block';
           }
         } else if (isHomePage) {
           // Make sure only homepage related content is shown
@@ -173,7 +286,7 @@ export async function loadContent(path, pushState = true) {
         
         // Trigger custom event for page content loaded
         document.dispatchEvent(new CustomEvent('pageContentLoaded', { 
-          detail: { path, pageType: isHomePage ? 'home' : isGallery ? 'gallery' : isFursuit ? 'fursuit' : 'other' } 
+          detail: { path, pageType: isHomePage ? 'home' : isGallery ? 'gallery' : isFursuit ? 'fursuit' : isPhotography ? 'photography' : 'other' } 
         }));
         
         // Set language display

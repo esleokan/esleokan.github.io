@@ -12,6 +12,7 @@ body {
   background-color: #eee;
   margin: 0;
   padding: 0;
+  overflow-y: scroll; /* 強制始終顯示垂直滾動條，避免頁面寬度變化 */
 }
 
 /* 全局設置 */
@@ -212,6 +213,18 @@ header h1 a:hover {
   animation: fadeIn 0.6s ease;
 }
 
+/* 通用連結樣式 */
+.content a,
+.content-wrapper a {
+  color: #111;
+  transition: color 0.2s;
+}
+
+.content a:hover,
+.content-wrapper a:hover {
+  color: #82333C;
+}
+
 .text-content {
   flex: 0 0 70%;
   padding-right: 30px;
@@ -236,7 +249,10 @@ header h1 a:hover {
   height: auto;
 }
 
-/* 個人資料區塊 */
+/* ==========================================================================
+   個人資料區塊
+   ========================================================================== */
+
 .bio-section {
   margin: 2rem 0;
   background-color: #eee;
@@ -270,7 +286,10 @@ header h1 a:hover {
   flex: 1;
 }
 
-/* 社交媒體圖標 */
+/* ==========================================================================
+   社交媒體圖標
+   ========================================================================== */
+
 .social-icons {
   display: flex;
   align-items: flex-start;
@@ -278,13 +297,9 @@ header h1 a:hover {
 }
 
 .social-icon-spacing {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 0px;
+  margin-right: 16px;
   vertical-align: top;
-}
-
-.social-bio-item {
-  align-items: flex-start;
 }
 
 .social-icon {
@@ -297,7 +312,43 @@ header h1 a:hover {
   transform: scale(1.1);
 }
 
-/* 電報連結樣式 */
+/* SVG 社交媒體圖標樣式 */
+.social-link svg {
+  width: 35px;
+  height: 35px;
+  fill: #333;
+  transition: fill 0.3s ease, transform 0.2s ease;
+}
+
+.social-link:hover svg {
+  transform: scale(1.1);
+}
+
+/* 特定社交媒體的懸停顏色 */
+.twitter-link:hover svg {
+  fill: #000000 !important; /* X/Twitter 黑色 */
+}
+
+.facebook-link:hover svg {
+  fill: #1877f2 !important; /* Facebook 藍色 */
+}
+
+.plurk-link:hover svg {
+  fill: #ff5740 !important; /* Plurk 橙色 */
+}
+
+.strava-link:hover svg {
+  fill: #fc4c02 !important; /* Strava 橙色 */
+}
+
+.linktree-link:hover svg {
+  fill: #39e09b !important; /* Linktree 綠色 */
+}
+
+/* ==========================================================================
+   特殊連結樣式
+   ========================================================================== */
+
 .telegram-link {
   font-weight: bold;
   color: #333;
@@ -308,6 +359,52 @@ header h1 a:hover {
 .telegram-link:hover {
   color: #007bff;
   border-bottom-color: #007bff;
+}
+
+.clickable-underline {
+  color: #BED8CF;
+  border-bottom: 1.5px dashed #BED8CF;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.clickable-underline:hover {
+  color: #23527c;
+  border-bottom: 1.5px solid #23527c;
+}
+
+.learn-more-link {
+  color: #000 !important;
+  font-weight: 700;
+  font-family: 'Red Hat Text', 'Muli', sans-serif;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+
+.learn-more-link .learn-more-arrow {
+  color: #b8d9ce;
+  -webkit-text-stroke: 2px #222;
+  text-stroke: 0;
+}
+
+.learn-more-link:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-color: #333;
+}
+
+.loyn-intro .image-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 0em;
 }
 
 /* ==========================================================================
@@ -437,22 +534,34 @@ header h1 a:hover {
   padding: 0 40px 40px 40px;
 }
 
-.fursuit-grid .grid-item {
+/* Photography 頁面專用樣式 */
+#photography-grid {
+  column-count: 2;
+  column-gap: 32px;
+  max-width: 1600px;
+  margin: auto;
+  padding: 0 40px 40px 40px;
+}
+
+.fursuit-grid .grid-item,
+#photography-grid .grid-item {
   break-inside: avoid;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   border-radius: 8px;
   background-color: #fff;
   overflow: hidden;
   position: relative;
 }
 
-.fursuit-grid .grid-item img {
+.fursuit-grid .grid-item img,
+#photography-grid .grid-item img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.fursuit-grid .overlay {
+.fursuit-grid .overlay,
+#photography-grid .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -470,26 +579,31 @@ header h1 a:hover {
   padding: 10px;
 }
 
-.fursuit-grid .overlay .title {
+.fursuit-grid .overlay .title,
+#photography-grid .overlay .title {
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: bold;
 }
 
 .fursuit-grid .overlay .photographer,
-.fursuit-grid .overlay .date {
+.fursuit-grid .overlay .date,
+#photography-grid .overlay .photographer,
+#photography-grid .overlay .date {
   font-size: 14px;
   margin-bottom: 6px;
 }
 
-.fursuit-grid .overlay .description {
+.fursuit-grid .overlay .description,
+#photography-grid .overlay .description {
   font-size: 13px;
   margin-top: 8px;
   opacity: 0.9;
 }
 
 /* 桌面端懸停效果 */
-.fursuit-grid .grid-item:hover .overlay {
+.fursuit-grid .grid-item:hover .overlay,
+#photography-grid .grid-item:hover .overlay {
   opacity: 1;
 }
 
@@ -507,6 +621,16 @@ footer {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* 當 About Loyn 內容展開時顯示頁腳 */
+#learn-more-content[style*="display: block"] ~ footer,
+#learn-more-content[style*="display: block"] + footer {
+  opacity: 1;
+  visibility: visible;
 }
 
 footer .copyright {
@@ -518,8 +642,15 @@ footer .highlight {
 }
 
 /* ==========================================================================
-   響應式設計 - 桌面版 (中屏幕)
+   響應式設計
    ========================================================================== */
+
+/* 桌面版字體調整 */
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+  p, ul, ol {
+    font-size: 16px;
+  }
+}
 
 @media only screen and (min-width: 768px) {
   p, ul, ol {
@@ -533,6 +664,7 @@ footer .highlight {
   }
 }
 
+/* 桌面版佈局 */
 @media (min-width: 601px) {
   /* 桌面版覆蓋層效果 */
   .grid-item:hover .overlay,
@@ -565,10 +697,15 @@ footer .highlight {
 }
 
 /* ==========================================================================
-   響應式設計 - 移動版
+   移動版設計
    ========================================================================== */
 
 @media (max-width: 600px) {
+  /* 手機版字體大小調整 */
+  p, ul, ol {
+    font-size: 17px;
+  }
+
   /* 頁首和導航 */
   header {
     flex-direction: column;
@@ -577,6 +714,10 @@ footer .highlight {
     padding: 40px 20px 20px 20px;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  header h1 {
+    font-size: 28px;
   }
 
   .menu-toggle {
@@ -599,14 +740,14 @@ footer .highlight {
   
   .language-switcher .tab-link {
     padding: 5px 15px;
-    font-size: 14px;
+    font-size: 16px;
   }
   
   .lang-separator {
     display: flex;
     align-items: center;
     margin: 0 8px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   /* 導航標籤 */
@@ -625,11 +766,12 @@ footer .highlight {
   .tabs .tab-link {
     width: 100%;
     text-align: center;
-    padding: 10px 0;
+    padding: 12px 0;
     box-sizing: border-box;
     border-radius: 5px;
     display: flex;
     justify-content: center;
+    font-size: 16px;
   }
 
   /* 內容區域 */
@@ -641,7 +783,7 @@ footer .highlight {
   }
 
   /* 網格佈局 */
-  .grid, .fursuit-grid {
+  .grid, .fursuit-grid, #photography-grid {
     column-count: 1;
     padding: 0 20px 20px 20px;
     width: 100%;
@@ -658,18 +800,21 @@ footer .highlight {
   }
 
   .grid-item:hover .overlay,
-  .fursuit-grid .grid-item:hover .overlay {
+  .fursuit-grid .grid-item:hover .overlay,
+  #photography-grid .grid-item:hover .overlay {
     opacity: 0; 
   }
 
   .grid-item .overlay,
-  .fursuit-grid .grid-item .overlay {
+  .fursuit-grid .grid-item .overlay,
+  #photography-grid .grid-item .overlay {
     opacity: 0;
     transition: opacity 0.3s;
   }
 
   .grid-item.overlay-active .overlay,
-  .fursuit-grid .grid-item.overlay-active .overlay {
+  .fursuit-grid .grid-item.overlay-active .overlay,
+  #photography-grid .grid-item.overlay-active .overlay {
     opacity: 1;
   }
   
@@ -734,6 +879,14 @@ footer .highlight {
 
 /* 小型移動設備 */
 @media (max-width: 480px) {
+  p, ul, ol {
+    font-size: 16px;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
   .bio-section {
     padding: 1rem;
   }
