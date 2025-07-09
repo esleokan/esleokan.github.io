@@ -1,0 +1,286 @@
+/* ==========================================================================
+   響應式設計
+   ========================================================================== */
+
+/* 桌面版字體調整 */
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+  p, ul, ol {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  p, ul, ol {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (min-width: 1220px) {
+  p, ul, ol {
+    font-size: 18px;
+  }
+}
+
+/* 桌面版佈局 */
+@media (min-width: 601px) {
+  /* 桌面版覆蓋層效果 */
+  .grid-item:hover .overlay,
+  .fursuit-grid .grid-item:hover .overlay,
+  #photography-grid .grid-item:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* 首頁兩欄佈局 */
+  .content-wrapper {
+    flex-direction: row;
+  }
+  
+  /* 桌面版頁腳導航 */
+  .footer-nav {
+    flex-direction: row;
+  }
+}
+
+/* 中等桌面屏幕 */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .grid {
+    column-count: 2;
+  }
+}
+
+/* 平板佈局 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .bio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bio-grid .bio-item:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ==========================================================================
+   移動版設計
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  /* 手機版字體大小調整 */
+  p, ul, ol {
+    font-size: 17px;
+  }
+
+  /* 頁首和導航 */
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 40px 20px 20px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* 語言切換器 */
+  .language-switcher {
+    display: none;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    position: static;
+  }
+  
+  .language-switcher.show {
+    display: flex;
+  }
+  
+  .language-switcher .tab-link {
+    padding: 5px 15px;
+    font-size: 16px;
+  }
+  
+  .lang-separator {
+    display: flex;
+    align-items: center;
+    margin: 0 8px;
+    font-size: 16px;
+  }
+
+  /* 導航標籤 */
+  .tabs {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+
+  .tabs.show {
+    display: flex;
+  }
+
+  .tabs .tab-link {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  /* 內容區域 */
+  .content {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* 網格佈局 */
+  .grid, .fursuit-grid, #photography-grid {
+    column-count: 1;
+    padding: 0 20px 20px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 覆蓋層處理 */
+  .grid-item {
+    cursor: pointer;
+  }
+
+  .grid-item img {
+    pointer-events: none;
+  }
+
+  .grid-item:hover .overlay,
+  .fursuit-grid .grid-item:hover .overlay,
+  #photography-grid .grid-item:hover .overlay {
+    opacity: 0; 
+  }
+
+  .grid-item .overlay,
+  .fursuit-grid .grid-item .overlay,
+  #photography-grid .grid-item .overlay {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .grid-item.overlay-active .overlay,
+  .fursuit-grid .grid-item.overlay-active .overlay,
+  #photography-grid .grid-item.overlay-active .overlay {
+    opacity: 1;
+  }
+  
+  /* 特殊標記讓用戶知道點擊後有功能 */
+  .grid-item:after {
+    content: '🔍';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+  
+  .grid-item.overlay-active:after {
+    display: none;
+  }
+
+  /* 首頁佈局 */
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .text-content, .image-content {
+    flex: 0 0 100%;
+  }
+  
+  .image-content {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .image-content img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  /* 頁腳 */
+  footer {
+    padding: 20px;
+    font-size: 12px;
+  }
+  
+  /* 移動版頁腳導航 */
+  .footer-nav {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .footer-separator {
+    display: none;
+  }
+  
+  /* 確保移動版覆蓋層內元素樣式一致 */
+  .grid-item.overlay-active .overlay .title[data-link],
+  .grid-item.overlay-active .overlay .artist span[data-link] {
+    color: #b8d9ce;
+    text-decoration: none;
+  }
+  
+  .grid-item.overlay-active .overlay .title[data-link]:active,
+  .grid-item.overlay-active .overlay .artist span[data-link]:active {
+    color: #fff;
+  }
+}
+
+/* 小型移動設備 */
+@media (max-width: 480px) {
+  p, ul, ol {
+    font-size: 16px;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  .bio-section {
+    padding: 1rem;
+  }
+
+  .bio-grid {
+    gap: 0.8rem;
+  }
+}
+
+/* 中型移動設備 */
+@media (max-width: 768px) {
+  .bio-item {
+    flex-direction: column;
+    margin-bottom: 0.8rem;
+  }
+
+  .bio-label {
+    margin-bottom: 0.2rem;
+  }
+
+  .social-icons {
+    margin-top: 0.5rem;
+  }
+} 

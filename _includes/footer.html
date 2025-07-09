@@ -1,3 +1,36 @@
-<footer>
-  <div class="copyright">© 2025 Loyn's lair</div>
+<footer role="contentinfo" aria-label="網站頁腳">
+  <div class="footer-content">
+    <div class="copyright">
+      <span class="highlight">© 2025 Loyn's lair</span>
+      <span class="lang-en"> - Happy Little Dragon's Home</span>
+      <span class="lang-zh"> - 愉悅小龍的家</span>
+    </div>
+    
+    <nav class="footer-nav" role="navigation" aria-label="頁腳導航">
+      <a href="{{ '/' | relative_url }}" class="footer-link">
+        <span class="lang-en">Home</span>
+        <span class="lang-zh">首頁</span>
+      </a>
+      <span class="footer-separator" aria-hidden="true">•</span>
+      <a href="{{ '/gallery' | relative_url }}" class="footer-link">
+        <span class="lang-en">Gallery</span>
+        <span class="lang-zh">畫廊</span>
+      </a>
+      <span class="footer-separator" aria-hidden="true">•</span>
+      <a href="{{ '/fursuit' | relative_url }}" class="footer-link">
+        <span class="lang-en">Fursuit</span>
+        <span class="lang-zh">毛毛</span>
+      </a>
+      <span class="footer-separator" aria-hidden="true">•</span>
+      <a href="{{ '/photography' | relative_url }}" class="footer-link">
+        <span class="lang-en">Photography</span>
+        <span class="lang-zh">攝影</span>
+      </a>
+      <span class="footer-separator" aria-hidden="true">•</span>
+      <a href="{{ '/work' | relative_url }}" class="footer-link">
+        <span class="lang-en">Work</span>
+        <span class="lang-zh">工作</span>
+      </a>
+    </nav>
+  </div>
 </footer>

@@ -1,27 +1,49 @@
-<header>
-  <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div class="language-switcher">
-    <a href="#" class="tab-link active" data-lang="en">EN</a>
-    <span class="lang-separator">|</span>
-    <a href="#" class="tab-link" data-lang="zh">中</a>
-  </div>
-  <div class="tabs" id="tabMenu">
-    <a href="{{ '/' | relative_url }}" class="tab-link {% if page.url == '/' %}active{% endif %}" data-path="{{ '/' | relative_url }}">
+<header role="banner" aria-label="網站導航">
+  <!-- 網站標題 -->
+  <h1>
+    <a href="{{ '/' | relative_url }}" aria-label="回到首頁">{{ site.title }}</a>
+  </h1>
+  
+  <!-- 移動選單按鈕 -->
+  <button class="menu-toggle" 
+          onclick="toggleMenu()" 
+          aria-label="切換導航選單"
+          aria-expanded="false"
+          aria-controls="tabMenu">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+  
+  <!-- 語言切換器 -->
+  <nav class="language-switcher" role="navigation" aria-label="語言選擇">
+    <a href="#" class="tab-link active" data-lang="en" aria-label="切換到英文">EN</a>
+    <span class="lang-separator" aria-hidden="true">|</span>
+    <a href="#" class="tab-link" data-lang="zh" aria-label="切換到中文">中</a>
+  </nav>
+  
+  <!-- 主要導航 -->
+  <nav class="tabs" id="tabMenu" role="navigation" aria-label="主要導航">
+    <a href="{{ '/' | relative_url }}" 
+       class="tab-link {% if page.url == '/' %}active{% endif %}" 
+       data-path="{{ '/' | relative_url }}"
+       aria-current="{% if page.url == '/' %}page{% endif %}">
       <span class="lang-en">Home</span>
       <span class="lang-zh">簡介</span>
     </a>
-    <a href="{{ '/gallery' | relative_url }}" class="tab-link {% if page.url == '/gallery/' %}active{% endif %}" data-path="{{ '/gallery' | relative_url }}">
+    <a href="{{ '/gallery' | relative_url }}" 
+       class="tab-link {% if page.url == '/gallery/' %}active{% endif %}" 
+       data-path="{{ '/gallery' | relative_url }}"
+       aria-current="{% if page.url == '/gallery/' %}page{% endif %}">
       <span class="lang-en">Gallery</span>
       <span class="lang-zh">畫廊</span>
     </a>
-    <a href="{{ '/fursuit' | relative_url }}" class="tab-link {% if page.url == '/fursuit/' %}active{% endif %}" data-path="{{ '/fursuit' | relative_url }}">
+    <a href="{{ '/fursuit' | relative_url }}" 
+       class="tab-link {% if page.url == '/fursuit/' %}active{% endif %}" 
+       data-path="{{ '/fursuit' | relative_url }}"
+       aria-current="{% if page.url == '/fursuit/' %}page{% endif %}">
       <span class="lang-en">Fursuit</span>
       <span class="lang-zh">毛毛</span>
     </a>
-  </div>
+  </nav>
 </header>

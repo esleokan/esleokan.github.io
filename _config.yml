@@ -1,14 +1,35 @@
+# 網站基本設定
 title: Loyn's Lair
-description: Loyn 的小窩
+description: "Happy Little Dragon | Seismologist | Road Cyclist - 愉悅小龍洛恩的小窩，分享委託圖、毛毛照片和日常生活"
+author: "Loyn (洛恩)"
 baseurl: ""
 url: "https://loyn.me"
+
+# 語言設定
+lang: "en"
+languages: ["en", "zh-TW"]
+
+# 社交媒體設定
+social:
+  twitter: "loynuwu"
+  facebook: "loynuwu"
+  plurk: "Leo_os"
+  strava: "leokan"
+  linktree: "loyn"
+
+# SEO 設定
+seo:
+  title_separator: " - "
+  description_length: 160
+  image: "/assets/images/ogimage.webp"
+  twitter_card: "summary_large_image"
 
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-feed
 
-# Custom settings
+# 自定義設定
 collections:
   gallery:
     output: true
@@ -19,10 +40,12 @@ sass:
   sass_dir: _sass
   style: compressed
 
-# Exclude from processing
+# 排除檔案
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor
   - script
+  - README.md
+  - REFACTORING_SUMMARY.md

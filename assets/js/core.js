@@ -1,14 +1,11 @@
 /**
- * 主要 JavaScript 檔案
- * 負責初始化所有模組和處理全局功能
+ * 核心 JavaScript 檔案
+ * 包含所有頁面都需要的基本功能：語言切換、導航、工具函數
  */
 
-// 導入模組化組件
+// 導入核心模組
 import { initLanguageSwitcher } from './modules/language.js';
 import { initNavigation } from './modules/navigation.js';
-import { initLazyLoading } from './modules/lazyLoad.js';
-import { initGalleryHandlers } from './modules/gallery.js';
-import { initHomepageFeatures } from './modules/homepage.js';
 import { debounce, isMobileDevice } from './modules/utils.js';
 
 /**
@@ -83,8 +80,8 @@ function initPageLoadAnimation() {
     // 添加 js-loaded 類別
     document.documentElement.classList.add('js-loaded');
     
-    // 初始化所有模組
-    initAllModules();
+    // 初始化核心模組
+    initCoreModules();
     
     // 最後顯示頁面
     requestAnimationFrame(() => {
@@ -94,10 +91,10 @@ function initPageLoadAnimation() {
 }
 
 /**
- * 初始化所有模組
- * 按順序初始化各個功能模組
+ * 初始化核心模組
+ * 按順序初始化基本功能模組
  */
-function initAllModules() {
+function initCoreModules() {
   try {
     // 初始化語言切換器
     initLanguageSwitcher();
@@ -105,21 +102,12 @@ function initAllModules() {
     // 初始化導航功能
     initNavigation();
     
-    // 初始化畫廊處理器
-    initGalleryHandlers();
-    
-    // 初始化懶載入
-    initLazyLoading();
-    
-    // 初始化首頁特定功能
-    initHomepageFeatures();
-    
     // 初始化響應式功能
     initResponsiveFeatures();
     
-    console.log('所有模組初始化完成');
+    console.log('核心模組初始化完成');
   } catch (error) {
-    console.error('模組初始化錯誤:', error);
+    console.error('核心模組初始化錯誤:', error);
   }
 }
 
@@ -133,15 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * 頁面內容載入事件處理
- * 用於動態載入的內容
- */
-document.addEventListener('pageContentLoaded', function() {
-  console.log('頁面內容載入完成');
-  initHomepageFeatures();
-});
-
-/**
  * 頁面可見性變化處理
  * 當頁面從背景切換到前景時重新初始化某些功能
  */
@@ -150,5 +129,4 @@ document.addEventListener('visibilitychange', function() {
     // 頁面變為可見時，重新檢查某些狀態
     console.log('頁面變為可見');
   }
-});
-
+}); 

@@ -1,0 +1,240 @@
+/* ==========================================================================
+   組件樣式
+   ========================================================================== */
+
+/* 語言切換功能 */
+.lang-zh, .lang-en {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+html.js-loaded .lang-zh,
+html.js-loaded .lang-en {
+  opacity: 1;
+}
+
+/* 語言切換器 */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: auto;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+}
+
+.language-switcher .tab-link {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 3px 10px;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  outline: none; /* 移除 outline 避免被截斷 */
+}
+
+.language-switcher .tab-link:hover {
+  background-color: #dcdcdc;
+}
+
+.language-switcher .tab-link:focus {
+  outline: none; /* 確保 focus 時也沒有 outline */
+}
+
+html.js-loaded .language-switcher .tab-link.active {
+  background-color: #97C1F0;
+  color: #333;
+}
+
+.lang-separator {
+  margin: 0 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 導航標籤 */
+.tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tabs .tab-link {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  outline: none; /* 移除 outline 避免被截斷 */
+}
+
+.tabs .tab-link:hover {
+  background-color: #dcdcdc;
+}
+
+.tabs .tab-link:focus {
+  outline: none; /* 確保 focus 時也沒有 outline */
+}
+
+.tabs .tab-link.active {
+  background-color: #b8d9ce;
+  color: #333;
+}
+
+.tabs .tab-link .lang-en,
+.tabs .tab-link .lang-zh {
+  display: none;
+}
+
+/* 漢堡選單 */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: none;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.menu-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+/* 社交媒體圖標 */
+.social-icons {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.social-icon-spacing {
+  margin-left: 0px;
+  margin-right: 16px;
+  vertical-align: top;
+}
+
+.social-icon {
+  width: 35px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* SVG 社交媒體圖標樣式 */
+.social-link svg {
+  width: 35px;
+  height: 35px;
+  fill: #333;
+  transition: fill 0.3s ease, transform 0.2s ease;
+}
+
+.social-link:hover svg {
+  transform: scale(1.1);
+}
+
+/* 特定社交媒體的懸停顏色 */
+.twitter-link:hover svg {
+  fill: #000000 !important; /* X/Twitter 黑色 */
+}
+
+.facebook-link:hover svg {
+  fill: #1877f2 !important; /* Facebook 藍色 */
+}
+
+.plurk-link:hover svg {
+  fill: #ff5740 !important; /* Plurk 橙色 */
+}
+
+.strava-link:hover svg {
+  fill: #fc4c02 !important; /* Strava 橙色 */
+}
+
+.linktree-link:hover svg {
+  fill: #39e09b !important; /* Linktree 綠色 */
+}
+
+/* 特殊連結樣式 */
+.telegram-link {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px dotted #666;
+}
+
+.telegram-link:hover {
+  color: #007bff;
+  border-bottom-color: #007bff;
+}
+
+.clickable-underline {
+  color: #BED8CF;
+  border-bottom: 1.5px dashed #BED8CF;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.clickable-underline:hover {
+  color: #23527c;
+  border-bottom: 1.5px solid #23527c;
+}
+
+.learn-more-link {
+  color: #000 !important;
+  font-weight: 700;
+  font-family: 'Red Hat Text', 'Muli', sans-serif;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+
+.learn-more-link .learn-more-arrow {
+  color: #b8d9ce;
+  -webkit-text-stroke: 2px #222;
+  text-stroke: 0;
+}
+
+.learn-more-link:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-color: #333;
+} 

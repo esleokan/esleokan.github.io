@@ -1,0 +1,255 @@
+/* ==========================================================================
+   頁面特定樣式
+   ========================================================================== */
+
+/* ==========================================================================
+   畫廊頁面樣式
+   ========================================================================== */
+
+/* 通用網格佈局 */
+.grid {
+  column-count: 3;
+  column-gap: 16px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 40px 40px 40px;
+}
+
+.grid-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 覆蓋層效果 */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.overlay .title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.overlay .title a,
+.overlay .title[data-link] {
+  color: #b8d9ce;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.overlay .title a:hover,
+.overlay .title[data-link]:hover {
+  color: #fff;
+}
+
+.overlay .artist {
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.overlay .artist a,
+.overlay .artist span[data-link] {
+  color: #b8d9ce;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.overlay .artist a:hover,
+.overlay .artist span[data-link]:hover {
+  color: #fff;
+}
+
+/* 可點擊元素樣式 */
+.link-element {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.link-element:hover {
+  color: #b8d9ce;
+}
+
+.grid-item.overlay-active .link-element {
+  color: #b8d9ce;
+  text-decoration: none;
+}
+
+.grid-item:not(.overlay-active) .link-element {
+  pointer-events: none;
+}
+
+@media (min-width: 601px) {
+  .link-element {
+    pointer-events: auto !important;
+  }
+}
+
+/* 桌面端懸停效果 */
+.grid-item:hover .overlay {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   獸裝頁面樣式
+   ========================================================================== */
+
+/* 獸裝網格佈局 */
+.fursuit-grid {
+  column-count: 2;
+  column-gap: 16px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 40px 40px 40px;
+}
+
+.fursuit-grid .grid-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.fursuit-grid .grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fursuit-grid .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.fursuit-grid .overlay .title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.fursuit-grid .overlay .photographer,
+.fursuit-grid .overlay .date {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.fursuit-grid .overlay .description {
+  font-size: 13px;
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+/* 桌面端懸停效果 */
+.fursuit-grid .grid-item:hover .overlay {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   攝影頁面樣式
+   ========================================================================== */
+
+/* Photography 頁面專用樣式 */
+#photography-grid {
+  column-count: 2;
+  column-gap: 32px;
+  max-width: 1600px;
+  margin: auto;
+  padding: 0 40px 40px 40px;
+}
+
+#photography-grid .grid-item {
+  break-inside: avoid;
+  margin-bottom: 32px;
+  border-radius: 8px;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+#photography-grid .grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#photography-grid .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+#photography-grid .overlay .title {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#photography-grid .overlay .photographer,
+#photography-grid .overlay .date {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+#photography-grid .overlay .description {
+  font-size: 13px;
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+/* 桌面端懸停效果 */
+#photography-grid .grid-item:hover .overlay {
+  opacity: 1;
+} 

@@ -1,0 +1,89 @@
+/* ==========================================================================
+   基礎樣式
+   ========================================================================== */
+
+/* 基本元素樣式 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Red Hat Text', 'Muli', sans-serif;
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll; /* 強制始終顯示垂直滾動條，避免頁面寬度變化 */
+}
+
+/* 可訪問性樣式 */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* 無障礙焦點樣式 */
+*:focus {
+  outline: 2px solid #b8d9ce;
+  outline-offset: 2px;
+}
+
+/* 隱藏元素但保持可訪問性 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 文字和排版 */
+p, ul, ol {
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* 頁面過渡效果 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#page-content {
+  transition: opacity 0.2s ease-in-out;
+}
+
+#page-content h1, 
+#page-content h2, 
+#page-content h3 {
+  transition: none;
+  animation: none;
+  opacity: 1 !important;
+}
+
+/* 全局設置 */
+.content, .grid, .fursuit-grid, header, .tabs, .language-switcher {
+  max-width: 100%;
+  overflow-x: hidden;
+} 

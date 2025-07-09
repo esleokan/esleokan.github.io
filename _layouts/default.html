@@ -1,15 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   {% include head.html %}
   <body>
+    <!-- 跳過導航連結 (可訪問性) -->
+    <a href="#main-content" class="skip-link">跳過到主要內容</a>
+    
+    <!-- 頁首 -->
     {% include header.html %}
     
-    <main id="page-content">
-      {{ content }}
+    <!-- 主要內容區域 -->
+    <main id="main-content" role="main">
+      <div id="page-content">
+        {{ content }}
+      </div>
     </main>
     
+    <!-- 頁腳 -->
     {% include footer.html %}
     
-    <script type="module" src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <!-- 核心 JavaScript (所有頁面都需要) -->
+    <script type="module" src="{{ '/assets/js/core.js' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}"></script>
+    
+    <!-- 條件式 JavaScript 載入 -->
+    {% if page.url == '/' %}
+    <!-- 首頁特定功能 -->
+    <script type="module" src="{{ '/assets/js/pages/homepage.js' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}"></script>
+    {% endif %}
+    
+    {% if page.url contains 'gallery' or page.url contains 'fursuit' or page.url contains 'photography' %}
+    <!-- 畫廊頁面功能 -->
+    <script type="module" src="{{ '/assets/js/pages/gallery.js' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}"></script>
+    {% endif %}
+    
+    <!-- 無障礙功能增強 -->
+    <script>
+      // 移除 no-js 類別以啟用 JavaScript 功能
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+      
+      // 註冊 Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/assets/js/sw.js')
+            .then(registration => {
+              console.log('Service Worker 註冊成功:', registration.scope);
+            })
+            .catch(error => {
+              console.log('Service Worker 註冊失敗:', error);
+            });
+        });
+      }
+    </script>
   </body>
 </html>
