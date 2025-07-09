@@ -63,6 +63,39 @@ header h1 a:focus {
   color: #82333C;
 }
 
+.content a:focus,
+.content-wrapper a:focus,
+.content a:active,
+.content-wrapper a:active {
+  outline: none;
+}
+
+/* 移除所有連結和 SVG 的外框 */
+a:focus,
+a:active,
+svg:focus,
+svg:active {
+  outline: none;
+}
+
+/* 移除社交圖標的外框 */
+.social-link:focus,
+.social-link:active,
+.social-icon:focus,
+.social-icon:active {
+  outline: none;
+}
+
+/* 移除圖片和網格項目的外框 */
+img:focus,
+img:active,
+.grid-item:focus,
+.grid-item:active,
+.fursuit-grid .grid-item:focus,
+.fursuit-grid .grid-item:active {
+  outline: none;
+}
+
 .text-content {
   flex: 0 0 65%;
   padding-right: 30px;

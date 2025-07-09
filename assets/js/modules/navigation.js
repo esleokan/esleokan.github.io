@@ -160,11 +160,17 @@ export async function loadContent(path, pushState = true) {
       }
     }
     
-    // Don't hide the entire page, just fade the main content area
-    const pageContent = document.querySelector('#page-content');
-    if (pageContent) {
-      // Fade out existing content (keep title visible)
-      pageContent.style.opacity = '0.3';
+            // Don't hide the entire page, just fade the main content area
+        const pageContent = document.querySelector('#page-content');
+        if (pageContent) {
+          // Fade out existing content (keep title visible)
+          pageContent.style.opacity = '0.3';
+          
+          // 如果是攝影頁面，保持完全隱藏直到排序完成
+          const isPhotography = path.includes('/photography');
+          if (isPhotography) {
+            pageContent.style.opacity = '0';
+          }
       
       console.log('Fetching content from:', path);
       
@@ -202,6 +208,16 @@ export async function loadContent(path, pushState = true) {
         
         // Replace with new page content
         pageContent.innerHTML = newPageContent.innerHTML;
+        
+        // 如果是攝影頁面，在內容顯示前先隨機排序
+        if (isPhotography) {
+          const grid = document.getElementById('photography-grid');
+          if (grid) {
+            shuffleGridItems(grid);
+            // 排序完成後顯示
+            grid.style.opacity = '1';
+          }
+        }
         
         // Check page type to ensure correct content display
         if (isGallery) {
@@ -296,9 +312,17 @@ export async function loadContent(path, pushState = true) {
         window.scrollTo(0, 0);
         
         // Fade in updated content
-        setTimeout(() => {
-          pageContent.style.opacity = '1';
-        }, 100);
+        if (isPhotography) {
+          // 攝影頁面：排序完成後立即淡入
+          setTimeout(() => {
+            pageContent.style.opacity = '1';
+          }, 50); // 短暫延遲確保排序完成
+        } else {
+          // 其他頁面：延遲淡入
+          setTimeout(() => {
+            pageContent.style.opacity = '1';
+          }, 100);
+        }
       } else {
         console.log('Content elements not found, redirecting');
         window.location.href = path;
@@ -311,5 +335,20 @@ export async function loadContent(path, pushState = true) {
     console.error('Failed to load page:', error);
     // Direct redirect on error
     window.location.href = path;
+  }
+}
+
+// 隨機排序 grid 項目的函數
+function shuffleGridItems(grid) {
+  const items = Array.from(grid.children);
+  
+  if (items.length === 0) {
+    return;
+  }
+  
+  // 簡單的隨機排序
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    grid.appendChild(items[j]);
   }
 } 

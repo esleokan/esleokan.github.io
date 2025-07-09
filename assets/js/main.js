@@ -4,7 +4,7 @@
  */
 
 // 導入模組化組件
-import { initLanguageSwitcher } from './modules/language.js';
+import { initLanguageSwitcher, switchLanguage } from './modules/language.js';
 import { initNavigation } from './modules/navigation.js';
 import { initLazyLoading } from './modules/lazyLoad.js';
 import { initGalleryHandlers } from './modules/gallery.js';
@@ -117,9 +117,62 @@ function initAllModules() {
     // 初始化響應式功能
     initResponsiveFeatures();
     
+    // 註冊頁面內容載入事件監聽器
+    initPageContentLoadedListener();
+    
     console.log('所有模組初始化完成');
   } catch (error) {
     console.error('模組初始化錯誤:', error);
+  }
+}
+
+/**
+ * 初始化頁面內容載入事件監聽器
+ */
+function initPageContentLoadedListener() {
+  // 移除可能存在的舊監聽器
+  document.removeEventListener('pageContentLoaded', handlePageContentLoaded);
+  
+  // 添加新的事件監聽器
+  document.addEventListener('pageContentLoaded', handlePageContentLoaded);
+}
+
+/**
+ * 頁面內容載入事件處理函數
+ */
+function handlePageContentLoaded(event) {
+  const { path, pageType } = event.detail;
+  
+  // 可以在這裡添加其他頁面動態載入後需要的功能
+}
+
+// Photography shuffle function (保留以備將來使用)
+function shufflePhotography() {
+  const grid = document.getElementById('photography-grid');
+  
+  if (!grid) {
+    const alternativeGrid = document.querySelector('.fursuit-grid');
+    if (alternativeGrid) {
+      shuffleGridItems(alternativeGrid);
+    }
+    return;
+  }
+  
+  shuffleGridItems(grid);
+}
+
+// 實際的隨機排序邏輯
+function shuffleGridItems(grid) {
+  const items = Array.from(grid.children);
+  
+  if (items.length === 0) {
+    return;
+  }
+  
+  // 簡單的隨機排序
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    grid.appendChild(items[j]);
   }
 }
 
@@ -132,14 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initPageLoadAnimation();
 });
 
-/**
- * 頁面內容載入事件處理
- * 用於動態載入的內容
- */
-document.addEventListener('pageContentLoaded', function() {
-  console.log('頁面內容載入完成');
-  // 可以在這裡添加其他頁面動態載入後需要的功能
-});
+
 
 /**
  * 頁面可見性變化處理

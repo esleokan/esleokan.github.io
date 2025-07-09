@@ -5,11 +5,11 @@ permalink: /photography/
 ---
 <div class="content">
   <p>
-  Sony A7IV + 50mm f1.4 GM  
+  Sony A7IV + 50mm f1.4 GM
   </p>
 </div>
 
-<div class="fursuit-grid" id="photography-grid">
+<div class="fursuit-grid" id="photography-grid" style="opacity: 0;">
   {% for item in site.data.photography %}
     <div class="grid-item fade-in" tabindex="0" data-index="{{ forloop.index0 }}">
       <img src="{{ site.baseurl }}{{ item.image }}" alt="{{ item.title | default:'Loyn Photography' }}">
@@ -37,15 +37,12 @@ permalink: /photography/
 function shufflePhotography() {
   const grid = document.getElementById('photography-grid');
   if (!grid) {
-    console.log('找不到 photography-grid');
     return;
   }
   
   const items = Array.from(grid.children);
-  console.log('找到', items.length, '張圖片');
   
   if (items.length === 0) {
-    console.log('沒有圖片項目');
     return;
   }
   
@@ -55,20 +52,17 @@ function shufflePhotography() {
     grid.appendChild(items[j]);
   }
   
-  console.log('隨機排序完成');
+  // 排序完成後顯示
+  grid.style.opacity = '1';
 }
 
 // 頁面載入時執行隨機排序
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM 載入完成，開始隨機排序');
-  shufflePhotography();
-});
+document.addEventListener('DOMContentLoaded', shufflePhotography);
 
 // 如果頁面已經載入，直接執行
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', shufflePhotography);
 } else {
-  console.log('頁面已載入，直接執行隨機排序');
   shufflePhotography();
 }
 </script> 

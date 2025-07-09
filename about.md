@@ -11,7 +11,7 @@ permalink: /loyn/
         <p><b>Cheerful Little Dragon 🐲 | Seismologist ﮩ٨ـ | Cyclist 🚲</b></p>
         <p>Hello, I'm Loyn, a happy little furred dragon. I was inspired into being during my three and a half years of studying in Toulouse, France, shaped by the country's free and unique lifestyle. My name is pronounced /lɔɪn/ and written as 洛恩 in Chinese. Just like my real name, it often gets misspelled as Lyon, which always fun to hear. </p>
         <p>My fur is a soft blend of blue and green, creating a turquoise color. I wear a red scarf around my neck, showing a personality that is quiet but joyful. I enjoy a carefree life, staying close to nature and flying across wide open fields on sunny days. I feel deeply connected to the Earth, our beautiful blue planet. While I don't have fancy patterns, the upside-down heart on my back reflects a playful nature and a unique inner world.</p>
-        <p>I am currently mainly active in northern Taiwan. I work as a seismologist in the university. So if you see me with a hammer, there is no need to worry! That just showing I'm doing my job (mostly). In my free time, I enjoy road cycling in YangMingShan, both to stay healthy and to challenge myself. My short-term career goal is to find a faculty position. Having a dragon as a teacher in class would be pretty cool, owo! I'm also into photography, especially capturing the vibrant colors and unique personality of each fursuit. Whenever I get the chance to shoot, I always try my best to be there!  </p>
+        <p>I am currently mainly active in northern Taiwan. I work as a seismologist in the university. So if you see me with a hammer, there is no need to worry! That just showing I'm doing my job (mostly). In my free time, I enjoy road cycling in YangMingShan, both to stay healthy and to challenge myself. My short-term career goal is to find a faculty position. Having a dragon as a teacher in class would be pretty cool, owo! I'm also into photography, especially capturing the vibrant colors and unique personality of each fursuit. Whenever I get the chance, I always try my best to be there!  </p>
       </div>
       <div class="lang-zh">
       <p><b>愉悅小龍 🐲 | 地震學家 ﮩ٨ـ  | 公路車友 🚲</b></p>
@@ -19,8 +19,7 @@ permalink: /loyn/
         <p>主毛色係藍綠色合為綠松石色，與脖子上的紅色領巾，展現了他內斂但活潑愉悅的個性。崇尚自由無慮的生活，與天地為伍，喜愛在晴天的原野上遨遊飛翔，是美麗的藍星：地球的孩子。雖然沒有華麗的花紋，但後背的倒愛標誌，代表著他調皮、不逾矩與獨特的內心世界。</p>
         <p>現在主要活動區域為台灣北部。是地震學家，看到我拿槌子時別害怕～那是在工作！平常喜好騎公路車在陽明山爬坡，鍛鍊身體與挑戰自我！短期目標是找到一份教職～如果教室裡有龍老師的話，超級酷 owo！我也對攝影有興趣，尤其是毛毛攝影，我偏好最大程度的展現毛毛們多彩繽紛的魅力，有拍攝的機會肯定是不會放過的！</p>
       </div>
-<br>
-<br>
+      <img src="/assets/images/loyn_sd.webp" class="main-image" >
 <div class="bio-section">
     <h3 class="lang-en">Bio</h3>
     <h3 class="lang-zh">簡介</h3>
