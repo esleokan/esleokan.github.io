@@ -16,14 +16,21 @@ permalink: /photography/
       <div class="overlay">
         <div class="photographer lang-en">📷 {{ item.photographer }}</div>
         <div class="photographer lang-zh">📷 {{ item.photographer }}</div>
+        <div class="photographer lang-fr">📷 {{ item.photographer }}</div>
         <div class="date lang-en">📅 {{ item.date_taken }}</div>
         <div class="date lang-zh">📅 {{ item.date_taken }}</div>
+        <div class="date lang-fr">📅 {{ item.date_taken }}</div>
         {% if item.description %}
         <div class="description lang-en">{{ item.description }}</div>
         {% if item.description_zh %}
         <div class="description lang-zh">{{ item.description_zh }}</div>
         {% else %}
         <div class="description lang-zh">{{ item.description }}</div>
+        {% endif %}
+        {% if item.description_fr %}
+        <div class="description lang-fr">{{ item.description_fr }}</div>
+        {% else %}
+        <div class="description lang-fr">{{ item.description }}</div>
         {% endif %}
         {% endif %}
       </div>

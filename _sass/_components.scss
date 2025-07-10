@@ -3,14 +3,15 @@
    ========================================================================== */
 
 /* 語言切換功能 */
-.lang-zh, .lang-en {
+.lang-zh, .lang-en, .lang-fr {
   display: none;
   opacity: 0;
   transition: opacity 0.2s ease;
 }
 
 html.js-loaded .lang-zh,
-html.js-loaded .lang-en {
+html.js-loaded .lang-en,
+html.js-loaded .lang-fr {
   opacity: 1;
 }
 
@@ -38,6 +39,15 @@ html.js-loaded .lang-en {
   text-decoration: none;
   display: inline-block;
   outline: none; /* 移除 outline 避免被截斷 */
+}
+
+/* 隱藏法語語言切換器 */
+.language-switcher .tab-link[data-lang="fr"] {
+  display: none;
+}
+
+.language-switcher .lang-separator:nth-of-type(2) {
+  display: none;
 }
 
 .language-switcher .tab-link:hover {
@@ -96,7 +106,8 @@ html.js-loaded .language-switcher .tab-link.active {
 }
 
 .tabs .tab-link .lang-en,
-.tabs .tab-link .lang-zh {
+.tabs .tab-link .lang-zh,
+.tabs .tab-link .lang-fr {
   display: none;
 }
 
@@ -238,4 +249,27 @@ html.js-loaded .language-switcher .tab-link.active {
 .learn-more-link:hover {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   border-color: #333;
+} 
+
+/* 手機版語言提示 */
+.mobile-lang-hint {
+  display: none; /* 預設隱藏 */
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+.mobile-lang-hint p {
+  margin: 0;
+}
+
+/* 只在手機版顯示 */
+@media (max-width: 768px) {
+  .mobile-lang-hint {
+    display: block;
+  }
 } 

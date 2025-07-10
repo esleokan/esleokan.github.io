@@ -20,6 +20,8 @@
     <a href="#" class="tab-link active" data-lang="en" aria-label="切換到英文">EN</a>
     <span class="lang-separator" aria-hidden="true">|</span>
     <a href="#" class="tab-link" data-lang="zh" aria-label="切換到中文">中</a>
+    <span class="lang-separator" aria-hidden="true">|</span>
+    <a href="#" class="tab-link" data-lang="fr" aria-label="切換到法文">FR</a>
   </nav>
   
   <!-- 主要導航 -->
@@ -30,6 +32,7 @@
        aria-current="{% if page.url == '/loyn/' %}page{% endif %}">
       <span class="lang-en">Loyn</span>
       <span class="lang-zh">Loyn</span>
+      <span class="lang-fr">Loyn</span>
     </a>
     <a href="{{ '/gallery' | relative_url }}" 
        class="tab-link {% if page.url == '/gallery/' %}active{% endif %}" 
@@ -37,6 +40,7 @@
        aria-current="{% if page.url == '/gallery/' %}page{% endif %}">
       <span class="lang-en">Gallery</span>
       <span class="lang-zh">畫廊</span>
+      <span class="lang-fr">Galerie</span>
     </a>
     <a href="{{ '/fursuit' | relative_url }}" 
        class="tab-link {% if page.url == '/fursuit/' %}active{% endif %}" 
@@ -44,6 +48,7 @@
        aria-current="{% if page.url == '/fursuit/' %}page{% endif %}">
       <span class="lang-en">Fursuit</span>
       <span class="lang-zh">毛毛</span>
+      <span class="lang-fr">Fursuit</span>
     </a>
   </nav>
 </header>

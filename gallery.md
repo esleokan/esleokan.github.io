@@ -11,6 +11,9 @@ permalink: /gallery/
   <p class="lang-zh">
     我不是繪師，這邊是展示來自不同繪師筆下的洛恩。感謝他們！
   </p>
+  <p class="lang-fr">
+    Je ne suis pas l'artiste. Juste un archivage fursonal pour conserver les œuvres commandées et offertes par les artistes. Je les apprécie !
+  </p>
 </div>
 
 <div class="grid">

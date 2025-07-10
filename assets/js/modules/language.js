@@ -28,7 +28,7 @@ export function switchLanguage(lang) {
   const langButtons = document.querySelectorAll('.language-switcher .tab-link');
   
   // Hide all language content first
-  document.querySelectorAll('.lang-zh, .lang-en').forEach(el => {
+  document.querySelectorAll('.lang-zh, .lang-en, .lang-fr').forEach(el => {
     el.style.display = 'none';
   });
   

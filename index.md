@@ -7,6 +7,13 @@ permalink: /
 <div id="page-content">
   <div class="content-wrapper">
     <div class="text-content">
+      <!-- 手機版語言提示 -->
+      <div class="mobile-lang-hint">
+        <p class="lang-en">(中文使用者可以在右上角換語系)</p>
+        <p class="lang-zh">(English is available in the hamburger list)</p>
+        <p class="lang-fr">(English is available in the hamburger list)</p>
+      </div>
+      
       <div class="lang-en">
         
         <p>Hello! Welcome to Loyn's lair, home of the cheerful little furred dragon!</p>
@@ -37,6 +44,22 @@ permalink: /
         </p>
         
         <p>最新動態可以關注X與Facebook的公開貼文！ <a href="/loyn" class="telegram-link" rel="noopener noreferrer">更多關於洛恩 <span style="font-size:0.9em; margin-left:0.5em;">→</span></a></p>
+      </div>
+      
+      <div class="lang-fr">
+        <p>Bonjour ! Bienvenue dans l'antre de Loyn, la maison du petit dragon à fourrure joyeux !</p>
+        
+        <p>Ici vous trouverez l'<a href="https://loyn.me/gallery" class="telegram-link">art</a> commandé de Loyn et les photos de <a href="https://loyn.me/fursuit" class="telegram-link">fursuit</a>.<br>
+        Un grand merci à tous les artistes et amis qui ont donné vie à Loyn !</p>
+        
+        <p>
+        Un adorable
+        <a href="https://t.me/addstickers/loynn" class="telegram-link" target="_blank" rel="noopener noreferrer">
+        pack d'autocollants Telegram
+        </a> de Loyn est disponible pour égayer vos conversations !
+        </p>
+        
+        <p>Pour les dernières aventures de Loyn, consultez les publications publiques sur X et Facebook ! <a href="/loyn" class="telegram-link" rel="noopener noreferrer">Plus sur Loyn <span style="font-size:0.9em; margin-left:0.5em;">→</span></a></p>
       </div>
       <br>
       <div class="social-icons">

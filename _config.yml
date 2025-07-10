@@ -1,13 +1,13 @@
 # 網站基本設定
 title: Loyn's Lair
-description: "Happy Little Dragon | Seismologist | Road Cyclist - 愉悅小龍洛恩的小窩，分享委託圖、毛毛照片和日常生活"
+description: "Happy Little Dragon | Seismologist | Road Cyclist - 愉悅小龍洛恩的小窩，分享委託圖、毛毛照片和日常生活 - Petit Dragon Joyeux | Sismologue | Cycliste - L'antre de Loyn, partageant art commandé, photos fursuit et vie quotidienne"
 author: "Loyn (洛恩)"
 baseurl: ""
 url: "https://loyn.me"
 
 # 語言設定
 lang: "en"
-languages: ["en", "zh-TW"]
+languages: ["en", "zh-TW", "fr"]
 
 # 社交媒體設定
 social:
