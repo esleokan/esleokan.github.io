@@ -51,6 +51,16 @@ header h1 a:focus {
   animation: fadeIn 0.6s ease;
 }
 
+/* 通用文字樣式 */
+.content p,
+.content-wrapper p,
+.text-content p {
+  line-height: 1.8;
+  margin-bottom: 1.2em;
+  color: #212529;
+  font-weight: 400;
+}
+
 /* 通用連結樣式 */
 .content a,
 .content-wrapper a {
@@ -128,6 +138,279 @@ img:active,
   align-self: flex-start;
   position: sticky;
   top: 0px;
+}
+
+/* Meme 風格佈局 */
+.meme-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.meme-image {
+  flex: 0 0 300px;
+  margin-left: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hammer-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.meme-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.loyn-quote {
+  margin: 0;
+  padding: 0;
+  border: none;
+  position: relative;
+}
+
+.loyn-quote p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.loyn-quote cite {
+  font-size: 16px;
+  font-style: italic;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 工作頁面說明文字 */
+.work-description {
+  text-align: center;
+  margin: 30px 0;
+  padding: 0 20px;
+}
+
+.work-description p {
+  font-style: italic;
+  color: #6c757d;
+  font-size: 0.95em;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* 研究主題選擇器 */
+.research-selector {
+  text-align: center;
+  margin: 50px 0;
+  padding: 0 20px;
+}
+
+.selector-header {
+  margin-bottom: 30px;
+}
+
+.selector-header h3 {
+  color: #495057;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.selector-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.topic-btn {
+  padding: 16px 28px;
+  border: 2px solid #dee2e6;
+  background: #fff;
+  color: #495057;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 160px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.topic-btn:hover {
+  background: #6c757d;
+  color: #fff;
+  border-color: #6c757d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.topic-btn.active {
+  background: #343a40;
+  color: #fff;
+  border-color: #343a40;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.topic-btn:active {
+  transform: translateY(0);
+}
+
+/* 研究內容區域 */
+.research-content {
+  position: relative;
+  min-height: 400px;
+  margin-top: 30px;
+}
+
+.research-topic {
+  display: none;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: blur(2px);
+}
+
+.research-topic.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* 研究主題內容美化 */
+.research-topic h2 {
+  background: linear-gradient(135deg, #343a40 0%, #495057 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.2em;
+  margin-bottom: 1.5em;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.research-topic h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #6c757d, #adb5bd);
+  border-radius: 2px;
+}
+
+.research-topic h3 {
+  color: #495057;
+  font-size: 1.4em;
+  margin: 2em 0 1em 0;
+  padding-left: 15px;
+  border-left: 4px solid #6c757d;
+}
+
+.research-topic p {
+  line-height: 1.8;
+  margin-bottom: 1.2em;
+  color: #212529;
+  font-weight: 400;
+}
+
+.research-topic ul {
+  margin: 1.5em 0;
+  padding-left: 1.5em;
+}
+
+.research-topic li {
+  margin-bottom: 0.8em;
+  line-height: 1.6;
+  color: #343a40;
+  position: relative;
+}
+
+.research-topic li::marker {
+  color: #6c757d;
+  font-weight: bold;
+}
+
+/* 研究主題分隔線 */
+.research-divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #333, transparent);
+  margin: 60px 0;
+  opacity: 0.6;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .meme-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .meme-image {
+    flex: 0 0 auto;
+    max-width: 180px;
+  }
+  
+  .loyn-quote p {
+    font-size: 20px;
+  }
+  
+  .loyn-quote cite {
+    font-size: 14px;
+  }
+  
+  .research-divider {
+    margin: 40px 0;
+  }
+  
+  .research-selector {
+    padding: 0 15px;
+  }
+  
+  .selector-header h3 {
+    font-size: 1.1em;
+  }
+  
+  .selector-buttons {
+    gap: 10px;
+  }
+  
+  .topic-btn {
+    padding: 14px 20px;
+    font-size: 14px;
+    min-width: 120px;
+    border-radius: 10px;
+  }
+  
+  .research-topic h2 {
+    font-size: 1.8em;
+  }
+  
+  .research-topic h3 {
+    font-size: 1.2em;
+  }
 }
 
 /* 個人資料區塊 */

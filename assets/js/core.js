@@ -91,6 +91,44 @@ function initPageLoadAnimation() {
 }
 
 /**
+ * 初始化研究主題切換功能
+ */
+function initResearchTopicSwitcher() {
+  const topicButtons = document.querySelectorAll('.topic-btn');
+  const researchTopics = document.querySelectorAll('.research-topic');
+  
+  if (topicButtons.length === 0 || researchTopics.length === 0) {
+    return;
+  }
+  
+  topicButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const targetTopic = this.getAttribute('data-topic');
+      
+      // 移除所有按鈕的 active 類別
+      topicButtons.forEach(btn => btn.classList.remove('active'));
+      
+      // 隱藏所有研究主題
+      researchTopics.forEach(topic => {
+        topic.classList.remove('active');
+      });
+      
+      // 添加 active 類別到當前按鈕
+      this.classList.add('active');
+      
+      // 顯示目標研究主題
+      const targetElement = document.getElementById(targetTopic);
+      if (targetElement) {
+        // 使用 setTimeout 確保隱藏動畫完成後再顯示
+        setTimeout(() => {
+          targetElement.classList.add('active');
+        }, 50);
+      }
+    });
+  });
+}
+
+/**
  * 初始化核心模組
  * 按順序初始化基本功能模組
  */
@@ -104,6 +142,9 @@ function initCoreModules() {
     
     // 初始化響應式功能
     initResponsiveFeatures();
+    
+    // 初始化研究主題切換功能
+    initResearchTopicSwitcher();
     
     console.log('核心模組初始化完成');
   } catch (error) {
