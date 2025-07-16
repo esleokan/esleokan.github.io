@@ -65,7 +65,7 @@ function initResponsiveFeatures() {
       }
       }
   }, 250);
-
+  
   // 監聽視窗大小變化
   window.addEventListener('resize', handleResize);
 }

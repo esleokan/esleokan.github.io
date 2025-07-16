@@ -51,19 +51,20 @@
 
 .overlay .title {
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 18px; // 比 .artist 大一點
   font-weight: bold;
+  color: #fff; // 和 .artist 一樣
 }
 
-.overlay .title a,
-.overlay .title[data-link] {
+.overlay .title[data-link],
+.overlay .title a {
   color: #b8d9ce;
   text-decoration: none;
   transition: color 0.3s;
 }
 
-.overlay .title a:hover,
-.overlay .title[data-link]:hover {
+.overlay .title[data-link]:hover,
+.overlay .title a:hover {
   color: #fff;
 }
 

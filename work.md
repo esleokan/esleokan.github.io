@@ -238,4 +238,21 @@ permalink: /work/
       </div>
     </div>
   </div>
-</div> 
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.title[data-link]').forEach(function(el) {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', function() {
+      window.open(el.getAttribute('data-link'), '_blank');
+    });
+  });
+  document.querySelectorAll('.artist span[data-link]').forEach(function(el) {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', function() {
+      window.open(el.getAttribute('data-link'), '_blank');
+    });
+  });
+});
+</script>
