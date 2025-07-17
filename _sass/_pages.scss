@@ -250,6 +250,14 @@
   opacity: 0.9;
 }
 
+#photography-grid .overlay .title,
+.fursuit-grid .overlay .title,
+.grid .overlay .title {
+  margin-bottom: 10px;
+  font-size: 14px; /* 與 .artist 一致 */
+  font-weight: bold;
+}
+
 /* 桌面端懸停效果 */
 #photography-grid .grid-item:hover .overlay {
   opacity: 1;

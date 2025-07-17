@@ -19,19 +19,23 @@ permalink: /gallery/
 <div class="grid">
   {% for item in site.data.gallery %}
     <div class="grid-item fade-in" tabindex="0">
-      {% if item.work_link %}
-        <img src="{{ item.image }}" alt="{{ item.title }}" data-work-link="{{ item.work_link }}" />
-        <div class="overlay">
-          <div class="title" data-link="{{ item.work_link }}">{{ item.title }}</div>
-          <div class="artist">🎨 <span data-link="{{ item.author_link | default:'#' }}">{{ item.author }}</span></div>
+      <img src="{{ item.image }}" alt="{{ item.title }}" />
+      <div class="overlay">
+        <div class="title">
+          {% if item.work_link %}
+            <a href="{{ item.work_link }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+          {% else %}
+            {{ item.title }}
+          {% endif %}
         </div>
-      {% else %}
-        <img src="{{ item.image }}" alt="{{ item.title }}" />
-        <div class="overlay">
-          <div class="title">{{ item.title }}</div>
-          <div class="artist">🎨 <span data-link="{{ item.author_link | default:'#' }}">{{ item.author }}</span></div>
+        <div class="artist">
+          {% if item.author_link %}
+            🎨 <a href="{{ item.author_link }}" target="_blank" rel="noopener noreferrer">{{ item.author }}</a>
+          {% else %}
+            🎨 {{ item.author }}
+          {% endif %}
         </div>
-      {% endif %}
+      </div>
     </div>
   {% endfor %}
 </div>

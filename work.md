@@ -18,11 +18,11 @@ permalink: /work/
     </div>
     <div class="meme-text">
       <blockquote class="loyn-quote lang-zh">
-        <p>「背上的巨槌絕不是裝飾品，每當陸地上有地震發生，靠著一把槌子便能全部解決！」</p>
+        <p>「手上的巨槌絕不是裝飾品，每當陸地上有地震發生，靠著一把槌子便能全部解決！」</p>
         <cite>—Loyn, 2025</cite>
       </blockquote>
       <blockquote class="loyn-quote lang-en">
-        <p>"The giant hammer on my back is definitely not just decoration. Whenever earthquakes occur on land, I can solve them all with just one hammer!"</p>
+        <p>"The giant hammer in my hand is definitely not just decoration. Whenever earthquakes occur on land, I can solve them all with just one hammer!"</p>
         <cite>—Loyn, 2025</cite>
       </blockquote>
       <blockquote class="loyn-quote lang-fr">
@@ -32,40 +32,33 @@ permalink: /work/
     </div>
   </div>
 
-  <!-- Research Topic Selector -->
-  <div class="research-selector">
-    <div class="selector-header">
-      <h3 class="lang-zh">研究主題</h3>
-      <h3 class="lang-en">Research Topic</h3>
-      <h3 class="lang-fr">Le Sujet de Recherche</h3>
-    </div>
-    <div class="selector-buttons">
-      <button class="topic-btn active" data-topic="fwi">
-        <span class="lang-zh">全波形逆推</span>
-        <span class="lang-en">Full-Waveform Inversion</span>
-        <span class="lang-fr">Inversion de Forme d'Onde</span>
-      </button>
-      <button class="topic-btn" data-topic="finite-fault">
-        <span class="lang-zh">有限震源</span>
-        <span class="lang-en">Finite Fault</span>
-        <span class="lang-fr">Faille Finie</span>
-      </button>
-      <button class="topic-btn" data-topic="finite-frequency">
-        <span class="lang-zh">有限頻寬算核</span>
-        <span class="lang-en">Finite Frequency Kernels</span>
-        <span class="lang-fr">Noyaux de Fréquence Finie</span>
-      </button>
-      <button class="topic-btn" data-topic="fault-scenario">
-        <span class="lang-zh">斷層情境模擬</span>
-        <span class="lang-en">Fault Scenario Simulation</span>
-        <span class="lang-fr">Simulation de Scénario de Faille</span>
-      </button>
-    </div>
+  <!-- Research Topic Tabs -->
+  <div class="research-tabs">
+    <button class="tab-btn active" data-tab="fwi">
+      <span class="lang-en">Full-Waveform Inversion</span>
+      <span class="lang-zh">全波形逆推</span>
+      <span class="lang-fr">Inversion de Forme d'Onde</span>
+    </button>
+    <button class="tab-btn" data-tab="finite-fault">
+      <span class="lang-en">Finite Fault</span>
+      <span class="lang-zh">有限震源</span>
+      <span class="lang-fr">Faille Finie</span>
+    </button>
+    <button class="tab-btn" data-tab="finite-frequency">
+      <span class="lang-en">Finite Frequency Kernels</span>
+      <span class="lang-zh">有限頻寬算核</span>
+      <span class="lang-fr">Noyaux de Fréquence Finie</span>
+    </button>
+    <button class="tab-btn" data-tab="fault-scenario">
+      <span class="lang-en">Fault Scenario Simulation</span>
+      <span class="lang-zh">斷層情境模擬</span>
+      <span class="lang-fr">Simulation de Scénario de Faille</span>
+    </button>
   </div>
 
   <!-- Research Content -->
   <div class="research-content">
-    <div class="research-topic active" id="fwi">
+    <div id="tab-fwi" class="tab-content">
       <div class="lang-zh">
         <h2>全波形逆推在區域性地殼與上地函成像的發展與應用</h2>
         
@@ -105,8 +98,6 @@ permalink: /work/
       </div>
 
       <div class="lang-en">
-        (Due to being busy, I used AI to generate summaries from my papers for this page, will refine later)
-
         <h2>Development and Application of Full-Waveform Inversion for Regional-Scale Crust and Upper Mantle Imaging</h2>
         
         <p>In recent years, geophysical research has increasingly shifted from traditional traveltime tomography to full-waveform inversion (FWI), a technique that utilizes complete seismic waveforms to achieve high-resolution subsurface imaging. By capturing both phase and amplitude information, FWI offers significantly improved sensitivity to complex geological structures.</p>
@@ -148,7 +139,7 @@ permalink: /work/
       </div>
     </div>
 
-    <div class="research-topic" id="finite-fault">
+    <div id="tab-finite-fault" class="tab-content" style="display:none;">
       <div class="lang-zh">
         <h2>有限震源破裂面逆推</h2>
         <p>有限震源反演（Finite Fault Inversion）是描述中大型地震震源破裂過程的關鍵方法，能有效解析震源時空破裂行為，對於地震物理理解與地震動模擬皆具有重要意義。</p>
@@ -176,7 +167,7 @@ permalink: /work/
       </div>
     </div>
 
-    <div class="research-topic" id="finite-frequency">
+    <div id="tab-finite-frequency" class="tab-content" style="display:none;">
       <div class="lang-zh">
         <h2>有限頻寬體波之內核 PKP 敏感度算核</h2>
         <p>我在碩士研究中探討了地震波有限頻寬效應對地球內核結構解析的影響，聚焦於 PKP 波相的走時敏感度分析。傳統的內核研究多仰賴 PKP 各分支波相（如 PKPab、PKPbc、PKIKP）之間的差分走時，並以射線理論為基礎建立模型。然而，射線理論假設波場為無限頻率，忽略了實際波場的有限頻寬特性，因此難以正確描述異常結構對觀測的實際影響範圍。</p>
@@ -200,7 +191,7 @@ permalink: /work/
       </div>
     </div>
 
-    <div class="research-topic" id="fault-scenario">
+    <div id="tab-fault-scenario" class="tab-content" style="display:none;">
       <div class="lang-zh">
         <h2>斷層情境模擬</h2>
         <p>本研究針對鐵砧山地區潛在作為二氧化碳地質封存場址的可行性，進行多場景地震波傳與應力應變模擬，評估區域性活動斷層（屯子腳、三義、大甲與鐵砧山斷層）以及歷史強震（921集集地震）對該場址的地動影響與同震地應力變化。</p>
@@ -240,19 +231,91 @@ permalink: /work/
   </div>
 </div>
 
+<style>
+.research-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 40px 0 8px 0;
+  padding: 0;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.tab-btn {
+  padding: 10px 18px;
+  border: none;
+  background: #f5f5f5;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  color: #666;
+}
+
+.tab-btn:hover {
+  background: #e8e8e8;
+  color: #333;
+}
+
+.tab-btn.active {
+  background: #b8d9ce;
+  color: #333;
+  font-weight: 700;
+}
+
+.research-content {
+  margin-top: 8px;
+}
+
+.tab-content {
+  padding: 20px 0;
+  line-height: 1.6;
+}
+
+.tab-content h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.tab-content h3 {
+  color: #555;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .research-tabs {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .tab-btn {
+    font-size: 13px;
+    padding: 10px 16px;
+    width: 80%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+</style>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.title[data-link]').forEach(function(el) {
-    el.style.cursor = 'pointer';
-    el.addEventListener('click', function() {
-      window.open(el.getAttribute('data-link'), '_blank');
+document.querySelectorAll('.tab-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.tab-content').forEach(function(tab) {
+      tab.style.display = 'none';
     });
-  });
-  document.querySelectorAll('.artist span[data-link]').forEach(function(el) {
-    el.style.cursor = 'pointer';
-    el.addEventListener('click', function() {
-      window.open(el.getAttribute('data-link'), '_blank');
+    document.querySelectorAll('.tab-btn').forEach(function(b) {
+      b.classList.remove('active');
     });
+    document.getElementById('tab-' + btn.dataset.tab).style.display = 'block';
+    btn.classList.add('active');
   });
 });
+// 預設顯示第一個tab
+document.querySelector('.tab-btn').click();
 </script>

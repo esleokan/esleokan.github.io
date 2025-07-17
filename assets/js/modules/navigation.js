@@ -166,9 +166,10 @@ export async function loadContent(path, pushState = true) {
           // Fade out existing content (keep title visible)
           pageContent.style.opacity = '0.3';
           
-          // 如果是攝影頁面，保持完全隱藏直到排序完成
+          // 如果是攝影頁面或毛毛頁面，保持完全隱藏直到排序完成
           const isPhotography = path.includes('/photography');
-          if (isPhotography) {
+          const isFursuitPage = path.includes('/fursuit');
+          if (isPhotography || isFursuitPage) {
             pageContent.style.opacity = '0';
           }
       
@@ -212,6 +213,16 @@ export async function loadContent(path, pushState = true) {
         // 如果是攝影頁面，在內容顯示前先隨機排序
         if (isPhotography) {
           const grid = document.getElementById('photography-grid');
+          if (grid) {
+            shuffleGridItems(grid);
+            // 排序完成後顯示
+            grid.style.opacity = '1';
+          }
+        }
+        
+        // 如果是毛毛頁面，在內容顯示前先隨機排序
+        if (isFursuit) {
+          const grid = document.getElementById('fursuit-grid');
           if (grid) {
             shuffleGridItems(grid);
             // 排序完成後顯示

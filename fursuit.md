@@ -18,9 +18,9 @@ permalink: /fursuit/
   </p>
 </div>
 
-<div class="fursuit-grid">
+<div class="fursuit-grid" id="fursuit-grid" style="opacity: 0;">
   {% for item in site.data.fursuit %}
-    <div class="grid-item fade-in" tabindex="0">
+    <div class="grid-item fade-in" tabindex="0" data-index="{{ forloop.index0 }}">
       <img src="{{ site.baseurl }}{{ item.image }}" alt="{{ item.title | default:'Loyn Fursuit' }}">
       <div class="overlay">
         {% if item.title %}
@@ -51,3 +51,37 @@ permalink: /fursuit/
 </div>
 
 <script src="/assets/js/gallery.js"></script>
+<script>
+// 隨機排序毛毛照片
+function shuffleFursuit() {
+  const grid = document.getElementById('fursuit-grid');
+  if (!grid) {
+    return;
+  }
+  
+  const items = Array.from(grid.children);
+  
+  if (items.length === 0) {
+    return;
+  }
+  
+  // 簡單的隨機排序
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    grid.appendChild(items[j]);
+  }
+  
+  // 排序完成後顯示
+  grid.style.opacity = '1';
+}
+
+// 頁面載入時執行隨機排序
+document.addEventListener('DOMContentLoaded', shuffleFursuit);
+
+// 如果頁面已經載入，直接執行
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', shuffleFursuit);
+} else {
+  shuffleFursuit();
+}
+</script>
