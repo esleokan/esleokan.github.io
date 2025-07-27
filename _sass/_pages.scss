@@ -6,6 +6,62 @@
    畫廊頁面樣式
    ========================================================================== */
 
+/* 區段標題樣式 */
+.section-title {
+  text-align: center;
+  margin: 40px 0 15px 0;
+  padding: 0 40px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+.section-title h2::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #b8d9ce 0%, #97C1F0 100%);
+  border-radius: 2px;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: #97C1F0;
+  border-radius: 2px;
+}
+
+/* Gallery 說明文字樣式 */
+.gallery-description {
+  text-align: center !important;
+  margin: 0 0 20px 0 !important;
+  max-width: none !important;
+}
+
+.gallery-description p {
+  margin: 0 !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+}
+
 /* 通用網格佈局 */
 .grid {
   column-count: 3;
@@ -84,6 +140,13 @@
 .overlay .artist a:hover,
 .overlay .artist span[data-link]:hover {
   color: #fff;
+}
+
+.overlay .date {
+  color: #fff;
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 5px;
 }
 
 /* 可點擊元素樣式 */

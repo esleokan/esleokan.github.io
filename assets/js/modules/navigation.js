@@ -38,6 +38,9 @@ export function initNavigation() {
     console.log('Set initial page class for:', currentPath);
   }
   
+  // Set initial page title
+  updatePageTitle(window.location.pathname);
+  
   // Handle history state changes
   window.addEventListener('popstate', function(event) {
     console.log('popstate event', event.state, 'current path:', window.location.pathname);
@@ -85,6 +88,9 @@ export function initNavigation() {
       if (currentTab) {
         currentTab.classList.add('active');
       }
+      
+      // Update page title even when content doesn't need reloading
+      updatePageTitle(targetPath);
       
       console.log('Content already matches, just updated tab state');
     }
@@ -148,6 +154,9 @@ export async function loadContent(path, pushState = true) {
     if (currentTab) {
       currentTab.classList.add('active');
     }
+    
+    // Update page title based on the path
+    updatePageTitle(path);
     
     // Push state to history (for normal navigation)
     if (pushState) {
@@ -362,4 +371,33 @@ function shuffleGridItems(grid) {
     const j = Math.floor(Math.random() * (i + 1));
     grid.appendChild(items[j]);
   }
+}
+
+// 更新頁面標題的函數
+function updatePageTitle(path) {
+  const siteTitle = 'Loyn\'s Lair';
+  let pageTitle = '';
+  
+  // 根據路徑設定頁面標題
+  if (path === '/' || path === '') {
+    pageTitle = siteTitle;
+  } else if (path.includes('/gallery')) {
+    pageTitle = `Gallery - ${siteTitle}`;
+  } else if (path.includes('/fursuit')) {
+    pageTitle = `Fursuit - ${siteTitle}`;
+  } else if (path.includes('/photography')) {
+    pageTitle = `Photography - ${siteTitle}`;
+  } else if (path.includes('/nsfw')) {
+    pageTitle = `NSFW - ${siteTitle}`;
+  } else if (path.includes('/work')) {
+    pageTitle = `Work - ${siteTitle}`;
+  } else if (path.includes('/about')) {
+    pageTitle = `About - ${siteTitle}`;
+  } else {
+    pageTitle = siteTitle;
+  }
+  
+  // 更新頁面標題
+  document.title = pageTitle;
+  console.log('Updated page title to:', pageTitle);
 } 
