@@ -229,7 +229,7 @@ permalink: /work/
       </div>
     </div>
   </div>
-</div>
+</div> 
 
 <style>
 .research-tabs {
