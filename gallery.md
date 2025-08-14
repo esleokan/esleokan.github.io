@@ -25,7 +25,7 @@ permalink: /gallery/
 
 <div class="grid" id="commissioned-grid">
   {% for item in site.data.gallery %}
-    {% unless item.gifted %}
+    {% unless item.gifted or item.own_work %}
       <div class="grid-item fade-in" tabindex="0">
         <img src="{{ item.image }}" alt="{{ item.title }}" />
         <div class="overlay">
@@ -89,6 +89,51 @@ permalink: /gallery/
             {% endif %}
           </div>
 
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<!-- 個龍拙作區域 -->
+<div class="section-title">
+  <h2 class="lang-en">My Works</h2>
+  <h2 class="lang-zh">個龍拙作</h2>
+  <h2 class="lang-fr">Mes Œuvres</h2>
+</div>
+
+<div class="content gallery-description">
+  <p class="lang-en">
+    Some of my own amateur drawings and creations.
+  </p>
+  <p class="lang-zh">
+    一些我自己的業餘塗鴉和創作
+  </p>
+  <p class="lang-fr">
+    Quelques-uns de mes propres dessins et créations amateurs.
+  </p>
+</div>
+
+<div class="grid" id="own-work-grid">
+  {% for item in site.data.gallery %}
+    {% if item.own_work %}
+      <div class="grid-item fade-in" tabindex="0">
+        <img src="{{ item.image }}" alt="{{ item.title }}" />
+        <div class="overlay">
+          <div class="title">
+            {% if item.work_link %}
+              <a href="{{ item.work_link }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+            {% else %}
+              {{ item.title }}
+            {% endif %}
+          </div>
+          <div class="artist">
+            {% if item.author_link %}
+              🎨 <a href="{{ item.author_link }}" target="_blank" rel="noopener noreferrer">{{ item.author }}</a>
+            {% else %}
+              🎨 {{ item.author }}
+            {% endif %}
+          </div>
         </div>
       </div>
     {% endif %}
