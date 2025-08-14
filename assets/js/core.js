@@ -72,22 +72,9 @@ function initResponsiveFeatures() {
  * 確保頁面內容平滑載入
  */
 function initPageLoadAnimation() {
-  // 隱藏內容直到完全載入
-  document.body.style.visibility = 'hidden';
-  
-  // 使用 requestAnimationFrame 確保平滑載入
-  requestAnimationFrame(() => {
-    // 添加 js-loaded 類別
-    document.documentElement.classList.add('js-loaded');
-    
-    // 初始化核心模組
-    initCoreModules();
-    
-    // 最後顯示頁面
-    requestAnimationFrame(() => {
-      document.body.style.visibility = 'visible';
-    });
-  });
+  // 立即啟用樣式並初始化，避免首屏空白
+  document.documentElement.classList.add('js-loaded');
+  initCoreModules();
 }
 
 /**
