@@ -75,22 +75,20 @@ function initResponsiveFeatures() {
  * 確保頁面內容平滑載入
  */
 function initPageLoadAnimation() {
-  // 隱藏內容直到完全載入
-  document.body.style.visibility = 'hidden';
+  // 立即顯示頁面內容，避免延遲
+  document.documentElement.classList.add('js-loaded');
   
-  // 使用 requestAnimationFrame 確保平滑載入
-  requestAnimationFrame(() => {
-    // 添加 js-loaded 類別
-    document.documentElement.classList.add('js-loaded');
-    
-    // 初始化所有模組
-    initAllModules();
-    
-    // 最後顯示頁面
-    requestAnimationFrame(() => {
-      document.body.style.visibility = 'visible';
-    });
-  });
+  // 使用 requestIdleCallback 在瀏覽器空閒時初始化模組
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      initAllModules();
+    }, { timeout: 1000 });
+  } else {
+    // 降級處理：使用 setTimeout 但時間較短
+    setTimeout(() => {
+      initAllModules();
+    }, 100);
+  }
 }
 
 /**

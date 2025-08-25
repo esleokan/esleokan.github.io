@@ -27,6 +27,9 @@ export function switchLanguage(lang) {
   
   const langButtons = document.querySelectorAll('.language-switcher .tab-link');
   
+  // 使用 DocumentFragment 來批量更新 DOM，提升效能
+  const fragment = document.createDocumentFragment();
+  
   // Hide all language content first
   document.querySelectorAll('.lang-zh, .lang-en, .lang-fr').forEach(el => {
     el.style.display = 'none';
@@ -38,10 +41,7 @@ export function switchLanguage(lang) {
   // Add active class to the selected language button
   const activeButton = document.querySelector(`.language-switcher .tab-link[data-lang="${lang}"]`);
   if (activeButton) {
-    // Use requestAnimationFrame to ensure DOM updates and CSS transitions are in order
-    requestAnimationFrame(() => {
-      activeButton.classList.add('active');
-    });
+    activeButton.classList.add('active');
   }
   
   // Show content for selected language

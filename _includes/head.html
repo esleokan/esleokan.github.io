@@ -18,6 +18,27 @@
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
   
+  <!-- 關鍵 CSS 內聯載入 -->
+  <style>
+    /* 關鍵渲染路徑樣式 */
+    body { 
+      font-family: 'Red Hat Text', 'Muli', sans-serif; 
+      background-color: #eee; 
+      margin: 0; 
+      padding: 0; 
+    }
+    #page-content { 
+      opacity: 1; 
+      transition: opacity 0.2s ease-in-out; 
+    }
+    .js-loaded #page-content { 
+      opacity: 1; 
+    }
+  </style>
+  
+  <!-- 圖片預載入 -->
+  <link rel="preload" href="/assets/images/hihihi.webp" as="image" type="image/webp">
+  
   <!-- 樣式表 -->
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}">
   

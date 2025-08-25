@@ -19,17 +19,17 @@
     {% include footer.html %}
     
     <!-- 核心 JavaScript (所有頁面都需要) -->
-    <script type="module" src="{{ '/assets/js/core.js' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}"></script>
+    <script type="module" src="{{ '/assets/js/core.js' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}" defer></script>
     
     <!-- 條件式 JavaScript 載入 -->
     {% if page.url == '/' %}
     <!-- 首頁特定功能 -->
-    <script type="module" src="{{ '/assets/js/pages/homepage.js' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}"></script>
+    <script type="module" src="{{ '/assets/js/pages/homepage.js' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}" defer></script>
     {% endif %}
     
     {% if page.url contains 'gallery' or page.url contains 'fursuit' or page.url contains 'photography' %}
     <!-- 畫廊頁面功能 -->
-    <script type="module" src="{{ '/assets/js/pages/gallery.js' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}"></script>
+    <script type="module" src="{{ '/assets/js/pages/gallery.js' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}" defer></script>
     {% endif %}
     
     <!-- 無障礙功能增強 -->

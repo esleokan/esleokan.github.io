@@ -104,7 +104,7 @@ permalink: /
     </div>
     
     <div class="image-content">
-      <img src="/assets/images/hihihi.webp" alt="2705132-11.output" class="main-image">
+      <img src="/assets/images/hihihi.webp" alt="2705132-11.output" class="main-image" loading="lazy" decoding="async">
     </div>
   </div>
 </div>

@@ -71,7 +71,8 @@ p, ul, ol {
 }
 
 #page-content {
-  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out; /* 減少過渡時間 */
 }
 
 #page-content h1, 
