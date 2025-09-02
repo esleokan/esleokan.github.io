@@ -1,8 +1,6 @@
-/* ==========================================================================
-   組件樣式
-   ========================================================================== */
+/* 組件樣式 */
 
-/* 語言切換功能 */
+/* 語言內容區塊 */
 .lang-zh, .lang-en, .lang-fr {
   display: none;
   opacity: 0;
@@ -17,15 +15,15 @@ html.js-loaded .lang-fr {
 
 /* 語言切換器 */
 .language-switcher {
+  position: absolute;
+  top: 40px;
+  right: 40px;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  margin-left: auto;
-  position: absolute;
-  right: 40px;
-  top: 40px;
+  margin: 0 0 10px auto;
 }
 
+.lang-switcher-btn,
 .language-switcher .tab-link {
   background-color: #f0f0f0;
   color: #333;
@@ -38,26 +36,25 @@ html.js-loaded .lang-fr {
   transition: all 0.2s ease;
   text-decoration: none;
   display: inline-block;
-  outline: none; /* 移除 outline 避免被截斷 */
+  outline: none;
 }
 
-/* 隱藏法語語言切換器 */
-.language-switcher .tab-link[data-lang="fr"] {
-  display: none;
-}
-
-.language-switcher .lang-separator:nth-of-type(2) {
-  display: none;
-}
-
+.lang-switcher-btn:hover,
 .language-switcher .tab-link:hover {
   background-color: #dcdcdc;
 }
 
+.lang-switcher-btn:focus,
 .language-switcher .tab-link:focus {
-  outline: none; /* 確保 focus 時也沒有 outline */
+  outline: none;
 }
 
+.lang-switcher-btn[data-lang="fr"],
+.language-switcher .tab-link[data-lang="fr"] {
+  display: none;
+}
+
+html.js-loaded .lang-switcher-btn.active,
 html.js-loaded .language-switcher .tab-link.active {
   background-color: #97C1F0;
   color: #333;
@@ -69,7 +66,12 @@ html.js-loaded .language-switcher .tab-link.active {
   color: #333;
 }
 
-/* 導航標籤 */
+.language-switcher .lang-separator:nth-of-type(2) {
+  display: none;
+}
+
+/* 主導航 */
+.nav-tabs,
 .tabs {
   display: flex;
   gap: 10px;
@@ -77,6 +79,7 @@ html.js-loaded .language-switcher .tab-link.active {
   background-color: #eee;
 }
 
+.nav-link,
 .tabs .tab-link {
   background-color: #eee;
   color: #333;
@@ -89,37 +92,43 @@ html.js-loaded .language-switcher .tab-link.active {
   transition: all 0.2s ease;
   text-decoration: none;
   display: inline-block;
-  outline: none; /* 移除 outline 避免被截斷 */
+  outline: none;
 }
 
+.nav-link:hover,
 .tabs .tab-link:hover {
   background-color: #dcdcdc;
 }
 
+.nav-link:focus,
 .tabs .tab-link:focus {
-  outline: none; /* 確保 focus 時也沒有 outline */
+  outline: none;
 }
 
+.nav-link.active,
 .tabs .tab-link.active {
   background-color: #b8d9ce;
   color: #333;
 }
 
-.tabs .tab-link .lang-en,
+.nav-link .lang-zh,
+.nav-link .lang-en,
+.nav-link .lang-fr,
 .tabs .tab-link .lang-zh,
+.tabs .tab-link .lang-en,
 .tabs .tab-link .lang-fr {
   display: none;
 }
 
-/* 漢堡選單 */
-.menu-toggle {
+/* 行動選單按鈕 */
+.mobile-menu-toggle {
+  position: absolute;
+  top: 40px;
+  right: 40px;
   display: none;
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
-  position: absolute;
-  top: 40px;
-  right: 40px;
   background: none;
   border: none;
   padding: 4px;
@@ -127,10 +136,36 @@ html.js-loaded .language-switcher .tab-link.active {
   transition: background-color 0.2s ease;
 }
 
-.menu-toggle:hover {
+.mobile-menu-toggle:hover,
+.mobile-menu-toggle:focus {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.menu-icon-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+/* 向後相容 */
+.menu-toggle {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.menu-toggle:hover,
 .menu-toggle:focus {
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -143,17 +178,57 @@ html.js-loaded .language-switcher .tab-link.active {
   transition: transform 0.3s ease;
 }
 
-/* 社交媒體圖標 */
+/* 社交媒體區塊 */
 .social-icons {
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
 }
 
-.social-icon-spacing {
-  margin-left: 0px;
+.social-link {
   margin-right: 16px;
-  vertical-align: top;
+  transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+.social-link svg {
+  width: 35px;
+  height: 35px;
+  fill: #333;
+  transition: fill 0.3s ease, transform 0.2s ease;
+}
+
+/* 社交平台顏色 */
+.social-link.twitter:hover svg,
+.twitter-link:hover svg { 
+  fill: #000000; 
+}
+
+.social-link.facebook:hover svg,
+.facebook-link:hover svg { 
+  fill: #1877f2; 
+}
+
+.social-link.plurk:hover svg,
+.plurk-link:hover svg { 
+  fill: #ff5740; 
+}
+
+.social-link.strava:hover svg,
+.strava-link:hover svg { 
+  fill: #fc4c02; 
+}
+
+.social-link.linktree:hover svg,
+.linktree-link:hover svg { 
+  fill: #39e09b; 
+}
+
+.social-icon-spacing {
+  margin-right: 16px;
 }
 
 .social-icon {
@@ -166,37 +241,55 @@ html.js-loaded .language-switcher .tab-link.active {
   transform: scale(1.1);
 }
 
-/* SVG 社交媒體圖標樣式 */
-.social-link svg {
-  width: 35px;
-  height: 35px;
-  fill: #333;
-  transition: fill 0.3s ease, transform 0.2s ease;
+/* 連結樣式 */
+.link-dotted {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px dotted #666;
+  transition: color 0.2s, border-color 0.2s;
 }
 
-.social-link:hover svg {
-  transform: scale(1.1);
+.link-dotted:hover {
+  color: #007bff;
+  border-bottom-color: #007bff;
 }
 
-/* 特定社交媒體的懸停顏色 */
-.twitter-link:hover svg {
-  fill: #000000 !important; /* X/Twitter 黑色 */
+.link-dashed {
+  color: #BED8CF;
+  border-bottom: 1.5px dashed #BED8CF;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
 }
 
-.facebook-link:hover svg {
-  fill: #1877f2 !important; /* Facebook 藍色 */
+.link-dashed:hover {
+  color: #23527c;
+  border-bottom: 1.5px solid #23527c;
 }
 
-.plurk-link:hover svg {
-  fill: #ff5740 !important; /* Plurk 橙色 */
+.cta-link {
+  color: #000;
+  font-weight: 700;
+  font-family: 'Red Hat Text', 'Muli', sans-serif;
+  background: none;
+  border: none;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.5em;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease;
 }
 
-.strava-link:hover svg {
-  fill: #fc4c02 !important; /* Strava 橙色 */
+.cta-link:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.linktree-link:hover svg {
-  fill: #39e09b !important; /* Linktree 綠色 */
+.cta-arrow {
+  color: #b8d9ce;
+  -webkit-text-stroke: 2px #222;
 }
 
 /* 特殊連結樣式 */
@@ -205,6 +298,7 @@ html.js-loaded .language-switcher .tab-link.active {
   color: #333;
   text-decoration: none;
   border-bottom: 1px dotted #666;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .telegram-link:hover {
@@ -225,35 +319,33 @@ html.js-loaded .language-switcher .tab-link.active {
 }
 
 .learn-more-link {
-  color: #000 !important;
+  color: #000;
   font-weight: 700;
   font-family: 'Red Hat Text', 'Muli', sans-serif;
   background: none;
   border: none;
-  border-radius: 0;
   padding: 0;
-  box-shadow: none;
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
   font-size: 1.5em;
   line-height: 1.2;
-}
-
-.learn-more-link .learn-more-arrow {
-  color: #b8d9ce;
-  -webkit-text-stroke: 2px #222;
-  text-stroke: 0;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease;
 }
 
 .learn-more-link:hover {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  border-color: #333;
+}
+
+.learn-more-arrow {
+  color: #b8d9ce;
+  -webkit-text-stroke: 2px #222;
 } 
 
 /* 手機版語言提示 */
 .mobile-lang-hint {
-  display: none; /* 預設隱藏 */
+  display: none;
   margin-bottom: 15px;
   padding: 8px 12px;
   text-align: center;
@@ -267,7 +359,6 @@ html.js-loaded .language-switcher .tab-link.active {
   margin: 0;
 }
 
-/* 只在手機版顯示 */
 @media (max-width: 768px) {
   .mobile-lang-hint {
     display: block;

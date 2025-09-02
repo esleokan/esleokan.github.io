@@ -1,8 +1,6 @@
-/* ==========================================================================
-   佈局樣式
-   ========================================================================== */
+/* 佈局樣式 */
 
-/* 頁首樣式 */
+/* 頁首 */
 header {
   background-color: #eee;
   padding: 80px 40px 30px 40px;
@@ -43,7 +41,6 @@ header h1 a:focus {
   animation: fadeIn 0.6s ease;
 }
 
-/* 首頁兩欄佈局 */
 .content-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -61,7 +58,6 @@ header h1 a:focus {
   font-weight: 400;
 }
 
-/* 通用連結樣式 */
 .content a,
 .content-wrapper a {
   color: #111;

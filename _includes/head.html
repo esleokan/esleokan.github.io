@@ -14,39 +14,54 @@
   <meta name="language" content="zh-TW">
   <meta name="language" content="fr">
   
-  <!-- DNS 預解析 -->
+  <!-- DNS 預解析和資源提示 -->
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="preconnect" href="{{ site.url }}{{ site.baseurl }}">
   
   <!-- 關鍵 CSS 內聯載入 -->
   <style>
-    /* 關鍵渲染路徑樣式 */
+    /* 關鍵渲染路徑樣式 - 只包含真正關鍵的樣式 */
     body { 
-      font-family: 'Red Hat Text', 'Muli', sans-serif; 
+      font-family: 'Red Hat Text', 'Muli', 'PingFang TC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; 
       background-color: #eee; 
       margin: 0; 
       padding: 0; 
     }
+    
+    /* 立即顯示頁面內容，避免閃爍 */
     #page-content { 
       opacity: 1; 
-      transition: opacity 0.2s ease-in-out; 
+      visibility: visible;
     }
-    .js-loaded #page-content { 
-      opacity: 1; 
+    
+    /* 語言切換防閃爍 */
+    .lang-en, .lang-zh, .lang-fr {
+      opacity: 1;
+      transition: opacity 0.15s ease;
     }
   </style>
   
-  <!-- 圖片預載入 -->
+  <!-- 關鍵資源預載入 -->
   <link rel="preload" href="/assets/images/hihihi.webp" as="image" type="image/webp">
+  <link rel="preload" href="{{ '/assets/js/core.js' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}" as="script">
+  {% if page.url == '/' %}
+  <link rel="preload" href="{{ '/assets/js/pages/homepage.js' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}" as="script">
+  {% endif %}
   
-  <!-- 樣式表 -->
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}">
+  <!-- 樣式表 - 非阻塞載入 -->
+  <link rel="preload" href="{{ '/assets/css/styles.css' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v={{ site.time | date: '%Y%m%d' }}"></noscript>
   
-  <!-- 字體載入 -->
+  <!-- 字體載入 - 使用 font-display: swap 避免阻塞 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;600;700&display=swap" rel="stylesheet">
+  </noscript>
   
   <!-- 網站圖標 -->
   <link rel="icon" href="{{ site.baseurl }}/assets/images/icon.webp" type="image/webp">

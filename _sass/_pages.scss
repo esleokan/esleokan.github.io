@@ -1,12 +1,8 @@
-/* ==========================================================================
-   頁面特定樣式
-   ========================================================================== */
+/* 頁面特定樣式 */
 
-/* ==========================================================================
-   畫廊頁面樣式
-   ========================================================================== */
+/* 畫廊頁面 */
 
-/* 區段標題樣式 */
+/* 區段標題 */
 .section-title {
   text-align: center;
   margin: 40px 0 15px 0;
@@ -49,7 +45,7 @@
   border-radius: 2px;
 }
 
-/* Gallery 說明文字樣式 */
+/* 說明文字 */
 .gallery-description {
   text-align: center !important;
   margin: 0 0 20px 0 !important;
@@ -62,7 +58,7 @@
   text-align: center !important;
 }
 
-/* 通用網格佈局 */
+/* 網格佈局 */
 .grid {
   column-count: 3;
   column-gap: 16px;
@@ -173,16 +169,11 @@
   .link-element {
     pointer-events: auto !important;
   }
+  
+  .grid-item:hover .overlay {
+    opacity: 1;
+  }
 }
-
-/* 桌面端懸停效果 */
-.grid-item:hover .overlay {
-  opacity: 1;
-}
-
-/* ==========================================================================
-   獸裝頁面樣式
-   ========================================================================== */
 
 /* 獸裝網格佈局 */
 .fursuit-grid {
@@ -243,15 +234,6 @@
   margin-top: 8px;
   opacity: 0.9;
 }
-
-/* 桌面端懸停效果 */
-.fursuit-grid .grid-item:hover .overlay {
-  opacity: 1;
-}
-
-/* ==========================================================================
-   攝影頁面樣式
-   ========================================================================== */
 
 /* Photography 頁面專用樣式 */
 #photography-grid {
@@ -322,6 +304,9 @@
 }
 
 /* 桌面端懸停效果 */
-#photography-grid .grid-item:hover .overlay {
-  opacity: 1;
+@media (min-width: 601px) {
+  .fursuit-grid .grid-item:hover .overlay,
+  #photography-grid .grid-item:hover .overlay {
+    opacity: 1;
+  }
 } 

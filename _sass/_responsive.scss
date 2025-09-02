@@ -1,8 +1,6 @@
-/* ==========================================================================
-   響應式設計
-   ========================================================================== */
+/* 響應式設計 */
 
-/* 桌面版字體調整 */
+/* 字體大小調整 */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
   p, ul, ol {
     font-size: 16px;
@@ -23,32 +21,28 @@
 
 /* 桌面版佈局 */
 @media (min-width: 601px) {
-  /* 桌面版覆蓋層效果 */
   .grid-item:hover .overlay,
   .fursuit-grid .grid-item:hover .overlay,
   #photography-grid .grid-item:hover .overlay {
     opacity: 1;
   }
   
-  /* 首頁兩欄佈局 */
   .content-wrapper {
     flex-direction: row;
   }
   
-  /* 桌面版頁腳導航 */
   .footer-nav {
     flex-direction: row;
   }
 }
 
-/* 中等桌面屏幕 */
+/* 平板佈局 */
 @media (min-width: 601px) and (max-width: 1024px) {
   .grid {
     column-count: 2;
   }
 }
 
-/* 平板佈局 */
 @media (min-width: 769px) and (max-width: 1024px) {
   .bio-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -58,7 +52,6 @@
     grid-column: 1 / -1;
   }
 
-  /* 平板版標題樣式 */
   .section-title h2 {
     font-size: 22px;
   }
@@ -72,23 +65,17 @@
   }
 }
 
-/* ==========================================================================
-   移動版設計
-   ========================================================================== */
-
+/* 手機版佈局 */
 @media (max-width: 600px) {
-  /* 手機版字體大小調整 */
   p, ul, ol {
     font-size: 17px;
   }
 
-  /* 手機版標題樣式 */
   .section-title {
     margin: 30px 0 10px 0;
     padding: 0 20px;
   }
 
-  /* 手機版 Gallery 說明文字樣式 */
   .gallery-description {
     margin: 0 0 15px 0;
   }
@@ -110,7 +97,6 @@
     bottom: -9px;
   }
 
-  /* 頁首和導航 */
   header {
     flex-direction: column;
     align-items: stretch;
@@ -128,7 +114,6 @@
     display: flex;
   }
 
-  /* 語言切換器 */
   .language-switcher {
     display: none;
     width: 100%;
@@ -154,7 +139,6 @@
     font-size: 16px;
   }
 
-  /* 導航標籤 */
   .tabs {
     display: none;
     flex-direction: column;

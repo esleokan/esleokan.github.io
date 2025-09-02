@@ -3,18 +3,7 @@
  * Handles the gallery and fursuit grid items interactions
  */
 
-// Debounce function for optimization
-const debounce = (func, wait) => {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-};
+import { debounce } from './utils.js';
 
 // Initialize gallery event handlers
 export function initGalleryHandlers() {

@@ -133,7 +133,7 @@ function initCoreModules() {
     // 初始化研究主題切換功能
     initResearchTopicSwitcher();
     
-    console.log('核心模組初始化完成');
+    // 核心模組初始化完成
   } catch (error) {
     console.error('核心模組初始化錯誤:', error);
   }
@@ -144,17 +144,7 @@ function initCoreModules() {
  * 當 DOM 載入完成時執行
  */
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM 內容載入完成');
   initPageLoadAnimation();
 });
 
-/**
- * 頁面可見性變化處理
- * 當頁面從背景切換到前景時重新初始化某些功能
- */
-document.addEventListener('visibilitychange', function() {
-  if (!document.hidden) {
-    // 頁面變為可見時，重新檢查某些狀態
-    console.log('頁面變為可見');
-  }
-}); 
+// 簡化的頁面可見性處理 - 移除不必要的 log 

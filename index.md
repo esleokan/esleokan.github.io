@@ -4,8 +4,7 @@ title: Home
 permalink: /
 ---
 
-<div id="page-content">
-  <div class="content-wrapper">
+<div class="content-wrapper loyn-intro">
     <div class="text-content">
       <!-- 手機版語言提示 -->
       <div class="mobile-lang-hint">
@@ -104,7 +103,6 @@ permalink: /
     </div>
     
     <div class="image-content">
-      <img src="/assets/images/hihihi.webp" alt="2705132-11.output" class="main-image" loading="lazy" decoding="async">
+      <img src="/assets/images/hihihi.webp" alt="Loyn - Happy Little Dragon" class="main-image" loading="eager" decoding="async" width="300" height="400">
     </div>
   </div>
-</div>

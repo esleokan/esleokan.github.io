@@ -27,18 +27,19 @@ permalink: /gallery/
   {% for item in site.data.gallery %}
     {% unless item.gifted or item.own_work %}
       <div class="grid-item fade-in" tabindex="0">
-        <img src="{{ item.image }}" alt="{{ item.title }}" />
+        <img src="{{ item.image }}" alt="{{ item.title }}" 
+             {% if item.work_link %}data-work-link="{{ item.work_link }}"{% endif %} />
         <div class="overlay">
           <div class="title">
             {% if item.work_link %}
-              <a href="{{ item.work_link }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+              <a href="{{ item.work_link }}" target="_blank" rel="noopener noreferrer" data-link="{{ item.work_link }}">{{ item.title }}</a>
             {% else %}
               {{ item.title }}
             {% endif %}
           </div>
           <div class="artist">
             {% if item.author_link %}
-              🎨 <a href="{{ item.author_link }}" target="_blank" rel="noopener noreferrer">{{ item.author }}</a>
+              🎨 <a href="{{ item.author_link }}" target="_blank" rel="noopener noreferrer" data-link="{{ item.author_link }}">{{ item.author }}</a>
             {% else %}
               🎨 {{ item.author }}
             {% endif %}
@@ -72,18 +73,19 @@ permalink: /gallery/
   {% for item in site.data.gallery %}
     {% if item.gifted %}
       <div class="grid-item fade-in" tabindex="0">
-        <img src="{{ item.image }}" alt="{{ item.title }}" />
+        <img src="{{ item.image }}" alt="{{ item.title }}" 
+             {% if item.work_link %}data-work-link="{{ item.work_link }}"{% endif %} />
         <div class="overlay">
           <div class="title">
             {% if item.work_link %}
-              <a href="{{ item.work_link }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+              <a href="{{ item.work_link }}" target="_blank" rel="noopener noreferrer" data-link="{{ item.work_link }}">{{ item.title }}</a>
             {% else %}
               {{ item.title }}
             {% endif %}
           </div>
           <div class="artist">
             {% if item.author_link %}
-              🎨 <a href="{{ item.author_link }}" target="_blank" rel="noopener noreferrer">{{ item.author }}</a>
+              🎨 <a href="{{ item.author_link }}" target="_blank" rel="noopener noreferrer" data-link="{{ item.author_link }}">{{ item.author }}</a>
             {% else %}
               🎨 {{ item.author }}
             {% endif %}
@@ -118,18 +120,19 @@ permalink: /gallery/
   {% for item in site.data.gallery %}
     {% if item.own_work %}
       <div class="grid-item fade-in" tabindex="0">
-        <img src="{{ item.image }}" alt="{{ item.title }}" />
+        <img src="{{ item.image }}" alt="{{ item.title }}" 
+             {% if item.work_link %}data-work-link="{{ item.work_link }}"{% endif %} />
         <div class="overlay">
           <div class="title">
             {% if item.work_link %}
-              <a href="{{ item.work_link }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+              <a href="{{ item.work_link }}" target="_blank" rel="noopener noreferrer" data-link="{{ item.work_link }}">{{ item.title }}</a>
             {% else %}
               {{ item.title }}
             {% endif %}
           </div>
           <div class="artist">
             {% if item.author_link %}
-              🎨 <a href="{{ item.author_link }}" target="_blank" rel="noopener noreferrer">{{ item.author }}</a>
+              🎨 <a href="{{ item.author_link }}" target="_blank" rel="noopener noreferrer" data-link="{{ item.author_link }}">{{ item.author }}</a>
             {% else %}
               🎨 {{ item.author }}
             {% endif %}

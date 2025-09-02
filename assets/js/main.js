@@ -78,17 +78,8 @@ function initPageLoadAnimation() {
   // 立即顯示頁面內容，避免延遲
   document.documentElement.classList.add('js-loaded');
   
-  // 使用 requestIdleCallback 在瀏覽器空閒時初始化模組
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(() => {
-      initAllModules();
-    }, { timeout: 1000 });
-  } else {
-    // 降級處理：使用 setTimeout 但時間較短
-    setTimeout(() => {
-      initAllModules();
-    }, 100);
-  }
+  // 立即初始化關鍵模組，不使用延遲
+  initAllModules();
 }
 
 /**
@@ -118,34 +109,13 @@ function initAllModules() {
     // 註冊頁面內容載入事件監聽器
     initPageContentLoadedListener();
     
-    console.log('所有模組初始化完成');
+    // 所有模組初始化完成
   } catch (error) {
     console.error('模組初始化錯誤:', error);
   }
 }
 
-/**
- * 初始化頁面內容載入事件監聽器
- */
-function initPageContentLoadedListener() {
-  // 移除可能存在的舊監聽器
-  document.removeEventListener('pageContentLoaded', handlePageContentLoaded);
-  
-  // 添加新的事件監聽器
-  document.addEventListener('pageContentLoaded', handlePageContentLoaded);
-}
-
-/**
- * 頁面內容載入事件處理函數
- */
-function handlePageContentLoaded(event) {
-  const { path, pageType } = event.detail;
-  
-  // 初始化研究主題切換功能
-  initResearchTopicSwitcher();
-  
-  // 可以在這裡添加其他頁面動態載入後需要的功能
-}
+// 頁面內容載入事件處理已整合至 core.js
 
 /**
  * 初始化研究主題切換功能
@@ -185,55 +155,17 @@ function initResearchTopicSwitcher() {
   });
 }
 
-// Photography shuffle function (保留以備將來使用)
-function shufflePhotography() {
-  const grid = document.getElementById('photography-grid');
-  
-  if (!grid) {
-    const alternativeGrid = document.querySelector('.fursuit-grid');
-    if (alternativeGrid) {
-      shuffleGridItems(alternativeGrid);
-    }
-    return;
-  }
-  
-  shuffleGridItems(grid);
-}
-
-// 實際的隨機排序邏輯
-function shuffleGridItems(grid) {
-  const items = Array.from(grid.children);
-  
-  if (items.length === 0) {
-    return;
-  }
-  
-  // 簡單的隨機排序
-  for (let i = items.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    grid.appendChild(items[j]);
-  }
-}
+// 隨機排序邏輯已移至 navigation.js 模組中統一管理
 
 /**
  * 主要初始化函數
  * 當 DOM 載入完成時執行
  */
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM 內容載入完成');
   initPageLoadAnimation();
 });
 
 
 
-/**
- * 頁面可見性變化處理
- * 當頁面從背景切換到前景時重新初始化某些功能
- */
-document.addEventListener('visibilitychange', function() {
-  if (!document.hidden) {
-    // 頁面變為可見時，重新檢查某些狀態
-    console.log('頁面變為可見');
-  }
-});
+// 頁面可見性變化處理已簡化
 
